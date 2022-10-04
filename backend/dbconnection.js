@@ -1,4 +1,4 @@
-/** Connecting to Postgres DB on Heroku */
+/** Connecting to Postgres DB on Heroku, not used at the moment but may be used in the future*/
 const {Client} = require('pg')
 const {SQL_DATABASE_URL} = require('./ config.js')
 
@@ -9,12 +9,15 @@ const client = new Client({
     }
 });
 
-client.connect();
+const {Pool} = require('pg')
+const pool = new Pool({
+    connectionString: SQL_DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
+})
 
-client.query('SELECT * FROM talent;', (err, res) => {
-    if (err) throw err;
-    console.log("Connected to talent database")
-    client.end();
-  });
-
-module.exports = client;
+module.exports = {
+    dbClient: client,
+    dbPool: pool
+};

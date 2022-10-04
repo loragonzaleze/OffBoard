@@ -1,8 +1,9 @@
 const express = require('express');
 const cors = require('cors');
+var { graphqlHTTP } = require('express-graphql');
 
 /** Connect to SQL DB */
-const sqlDB = require('./dbconnection')
+//const sqlDB = require('./dbconnection')
 
 const app = express();
 /** Dependencies used by the app. */
@@ -15,7 +16,13 @@ app.use(express.urlencoded({extended: true}))
 const test = require('./routes/api/sample')
 
 /** Connect routes to app. */
-app.use('/api/', test)
+const { graphQLSchema, graphQLRoot } = require('./routes/api/talent');
+app.use('/graphql', graphqlHTTP({
+    schema: graphQLSchema,
+    rootValue: graphQLRoot,
+    graphiql: true,
+}));
+// app.use('/api/', test)
 
 
 const port = process.env.port || 5002;
