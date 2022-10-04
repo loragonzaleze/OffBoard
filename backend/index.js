@@ -1,8 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 
-const app = express();
+/** Connect to SQL DB */
+const sqlDB = require('./dbconnection')
 
+const app = express();
 /** Dependencies used by the app. */
 app.use(cors());
 app.use(express.json());
