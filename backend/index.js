@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 var { graphqlHTTP } = require('express-graphql');
-
 /** Connect to SQL DB */
 //const sqlDB = require('./dbconnection')
 
@@ -19,13 +18,13 @@ const test = require('./routes/api/sample')
 const { graphQLSchema, graphQLRoot } = require('./routes/api/talent');
 app.use('/graphql', graphqlHTTP({
     schema: graphQLSchema,
-    rootValue: graphQLRoot,
+   // rootValue: graphQLRoot,
     graphiql: true,
 }));
-// app.use('/api/', test)
+app.use('/api/', test)
 
 
-const port = process.env.port || 5002;
+const port = process.env.port || 5000;
 
 app.listen(port, () => {
     console.log('Server has started on port ' + port);
