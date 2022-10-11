@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Antic+Didone&family=Bungee+Inline&family=Fredericka+the+Great&family=Monofett&family=Open+Sans:wght@300;400;800&family=Poppins:wght@200;300;400;500;700&family=Questrial&family=Raleway&family=Roboto&family=Zilla+Slab+Highlight&display=swap');
+.login-logo {
+    margin-top: 5vh;
+    font-family: "Open Sans";
+    font-weight: 700;
+    font-size: 42px;
+    color: #0078f5;
+}
+.login-logo:hover {
+    cursor: pointer;
+}
+.login-title-text {
+    font-family: "Open Sans";
+    font-weight:700;
+    font-size: 42px;
+    margin-top: 5vh;
+}
+.login-subtitle-text {
+    margin-top: 2vh;
+    font-family: "Poppins";
+    font-weight: 300px;
+    font-size: 22px;
+    color: lightslategray;
+    margin-bottom: 5vh;
+}
+.login-input-box {
+    width: 550px;
+    height: 50px;
+    background-color: #d3d3d350;
+    outline: none;
+    border: 0px;
+    border-radius: 10px;
+    padding-left: 20px;
+    font-size: 20px;
+}
+.login-next-box {
+    margin-top: 3vh;
+    width: 575px;
+    height: 50px;
+    background-color: yellow;
+    border-radius: 10px;
+    border: 0px;
+    align-items: center;
+    justify-content:center;
+    font-size: 20px;
+    font-family: 'Poppins';
+    font-weight: 600;
+}
+.login-or {
+    margin-top: 3vh;
+    font-family: 'Poppins';
+    font-weight: 400;
+    color: gray;
+}
+.login-sso-box {
+    margin-top: 3vh;
+    width: 575px;
+    height: 50px;
+    background-color: white;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: #1E90FF;
+    color: #1E90FF;
+    align-items: center;
+    justify-content:center;
+    font-size: 18px;
+    font-family: 'Poppins';
+    font-weight: 400;
+}
+.login-endorsement-box {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction:column;
+    margin-bottom: 25vh;
+}
+.login-cant-login-text {
+    margin-top: 3vh;
+    font-family: 'Poppins';
+    font-weight: 400;
+    color: gray;
+    margin-bottom: 5px;
+}
+.login-endorsement-button {
+    color: #0078f5;
+    font-family: 'Poppins';
+    font-weight: 400;
+}
+.login-endorsement-button:hover {
+    cursor: pointer;
+    color: #0076f576;
+}
+.login-email-label {
+    font-family: 'Poppins';
+    font-weight: 500;
+}

@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter  as Router,
+  Route,
+  Routes,
+} from "react-router-dom";
+import React, { Component } from 'react';
+import ChooseInterests from './pages/choose_interests.js'
+import Login from './pages/login.js'
+import GettingStarted from './pages/getting_started.js'
+import NewAccount from './pages/new_account.js'
+import About from './pages/about.js'
+import Contact from './pages/contact.js'
+import Mission from './pages/mission.js'
+import Team from './pages/team.js'
+import SignUp from './pages/signup.js'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> hello
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+
+class App extends Component {
+  render()
+  {
+    return (
+      <div>
+        <Router>
+          <Routes>
+            <Route path="/" element={<GettingStarted/>} />
+            <Route path="/choose-interests" element={<ChooseInterests/>} />
+            <Route path="/login" element={<Login/>} />
+            <Route path="/new-account" element={<NewAccount/>} />
+            <Route path="/about" element={<About/>} />
+            <Route path="/team" element={<Team/>} />
+            <Route path="/contact" element={<Contact/>} />
+            <Route path="/mission" element={<Mission/>} />
+            <Route path="/about" element={<About/>} />
+            <Route path="/sign-up" element={<SignUp/>} />
+          </Routes>
+        </Router>
+      </div>
   );
 }
-
+}
 export default App;
