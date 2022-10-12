@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 import ChooseInterests from './pages/choose_interests.js'
 import Login from './pages/login.js'
 import GettingStarted from './pages/getting_started.js'
-import NewAccount from './pages/new_account.js'
+import Endorsed from './pages/endorsed.js'
 import About from './pages/about.js'
 import Contact from './pages/contact.js'
 import Mission from './pages/mission.js'
@@ -26,7 +26,7 @@ class App extends Component {
             <Route path="/" element={<GettingStarted/>} />
             <Route path="/choose-interests" element={<ChooseInterests/>} />
             <Route path="/login" element={<Login/>} />
-            <Route path="/new-account" element={<NewAccount/>} />
+            <Route path="/endorsed" element={<Endorsed/>} />
             <Route path="/about" element={<About/>} />
             <Route path="/team" element={<Team/>} />
             <Route path="/contact" element={<Contact/>} />

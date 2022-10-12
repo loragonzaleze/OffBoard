@@ -2,6 +2,7 @@ import "../global.css"
 import {BsArrowRightCircle} from "react-icons/bs"
 import { useNavigate } from "react-router-dom";
 import BottomGoTos from "../components/bottom-go-tos"
+// Home page of website
 function GettingStarted() {
 
     let navigate = useNavigate(); 

@@ -6,6 +6,7 @@
     align-items: center;
     height:100vh;  
     flex-direction:column;
+    user-select: none;
 }
 .title-text {
     font-family: 'Open Sans';

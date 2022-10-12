@@ -1,7 +1,7 @@
 import "./stylesheets/contact.css"
 import "../global.css"
 import { useNavigate } from "react-router-dom";
-
+// Opens page to fill in contact info to reach our team
 function Contact() {
   let navigate = useNavigate(); 
 

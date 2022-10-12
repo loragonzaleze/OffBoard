@@ -1,6 +1,10 @@
 import "../global.css"
 import { useNavigate } from "react-router-dom";
-
+// Used for many pages, has all four elements to link at the bottom to describe
+// About the company,
+// Mission of the company,
+// Team
+// Contact
 function BottomGoTos() {
     let navigate = useNavigate(); 
 

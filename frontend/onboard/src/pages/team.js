@@ -1,3 +1,4 @@
+// Team page shows who is working on the project
 function Team() {
     return (
       <div>
