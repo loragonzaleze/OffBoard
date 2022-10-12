@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+## How to
+1. Install node.js if you don't have it installed already.
+2. Pull repo into local computer. 
+3. Open up VSCode and open only frontend/onboard. This will show you all of the code here.
+4. If you are using VSCode, simply just use the terminal there and run ```npm install```. Otherwise, open your local terminal and navigate to frontend/onboard and run npm install.
+5. To run server locally, run ```npm start```
+6. You should now be able to see the website locally!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Key Things about the frontend
+### Me(Bruce) wants to keep the format of the code pretty clean so its easier to understand, so follow these rules when you create things
 
-In the project directory, you can run:
+1. When you make a new page, write a comment at the top to define what the page is for. ~1-2 lines is fine
+2. When you add a new page, add it to `App.js` route page w/ a relevant path name or else it won't link properly
+3. When you need CSS stuff specific to your page, create a new css file in the stylesheet folder. ```global.css``` can be used for some basic stuff. 
+3a. Follow the same convention I use in the stylesheets. Ex. if im working on login page, the css files should have .login-something.
+4. Add TODOs if you are working on a page and don't know how to do something / leave it for later
+5. Use view hieght / view width in css when it makes sense, try not to hardcode sizes unless you need it to / think its better
+6. Try to consolidate components if you can, I didn't really do this but its nice to do 
+7. Use classes if you have lots of states, if there isn't a ton to store just keep as functions
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Pages that have been done
+When you run locally your url is 
+```localhost:3000```
+Pages that are done / being implemented currently:\
+localhost:3000/\
+localhost:3000/login\
+localhost:3000/contact\
+localhost:3000/choose-interests
