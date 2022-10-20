@@ -49,23 +49,19 @@ function TalentEntry(props) {
   return (
     <div className = "talent-entry-container" style = {{backgroundColor: containerColor}}>
       <text className = "talent-entry-name">{props.name}</text>
-      <div className = "talent-entry-row-container">
-        <text className = "talent-entry-font">{props.job}</text>
-        <div className = "talent-entry-tag" style = {{backgroundColor: yearColor}}>
-          {years}
+      <text className = "talent-entry-font">{props.job}</text>
+      <div className = "talent-entry-tag-years" style = {{backgroundColor: yearColor}}>
+        {years}
+      </div>
+      <text className = "talent-entry-company">{props.company}</text>
+      <div className = "talent-entry-tag-field-container">
+        <div className = "talent-entry-tag-field" style = {{backgroundColor: fieldColor}}>
+            {props.field}
         </div>
       </div>
-      <div className = "talent-entry-row-container">
-        <text className = "talent-entry-font">{props.company}</text>
-        <div className = "talent-entry-tag" style = {{backgroundColor: fieldColor}}>
-          {props.field}
-        </div>
-      </div>
-      <div className = "talent-entry-location-container">
-        <BsLinkedin className = "talent-entry-linkedin" 
-        onClick = {() => window.open(props.linkedin, '_blank')}/>
-        <div className = "talent-entry-font">{props.location}</div>
-      </div>
+      <BsLinkedin className = "talent-entry-linkedin" 
+      onClick = {() => window.open(props.linkedin, '_blank')}/>
+      <div className = "talent-entry-location">{props.location}</div>
 
     </div>
   );
