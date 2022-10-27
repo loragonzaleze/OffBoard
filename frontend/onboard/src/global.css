@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Antic+Didone&family=Bungee+Inline&family=Fredericka+the+Great&family=Monofett&family=Open+Sans:wght@300;400;800&family=Questrial&family=Raleway&family=Roboto&family=Zilla+Slab+Highlight&display=swap');
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;  
+    flex-direction:column;
+    user-select: none;
+}
+.title-text {
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 55px;
+}
+.row-container {
+    display: flex;
+    flex-direction: row;
+}
+.button-container {
+    font-family: 'Open Sans';
+    font-size: 21px;
+    font-weight: 600;
+    background-color: #d3d3d350;
+    height: 70px;
+    width: 270px;
+    border-radius: 7px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 0px;
+}
+.button-container:hover {
+    background-color: lightgray;
+    cursor: pointer;
+}
+.logo {
+    position: absolute;
+    font-family: "Open Sans";
+    top: 0px;
+    left: 0px;
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 35px;
+    color: #0078f5;
+    font-weight: 700;
+    pointer-events: none;
+}
+.bottom-go-tos {
+    font-family: "Open Sans";
+    margin: 10px;
+    margin-right: 40px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.bottom-go-tos:hover {
+    cursor: pointer;
+    color: gray;
+}
+.login-button {
+    font-family: "Open Sans";
+    margin: 10px;
+    margin-right: 20px;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+.login-button:hover {
+    cursor: pointer;
+    color: gray;
+}
+.signup-button {
+    font-family: "Open Sans";
+    margin: 10px;
+    margin-right: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #0078f5;
+}
+.signup-button:hover {
+    cursor: pointer;
+    color: #0076f576;
+}
+
+
+
+.slider{
+    font-family: 'Open Sans';
+
+    height: 70px;
+    padding-left:15px;
+    font-size: 55px;
+    overflow:hidden;
+    color: #0078f5;
+    font-weight: 600;
+
+  }
+  .slider div {
+    height: 70px;
+    margin-bottom: 70px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .slider-text1 {
+    margin-left: 14;
+    text-decoration-line: underline;
+    text-decoration-color: yellow;
+    text-decoration-line: 10px;
+    text-underline-offset: 5px;
+    animation: slide 10s linear infinite;
+  }
+  .slider-text2 {
+    margin-left: 14;
+    text-decoration-line: underline;
+    text-decoration-color: yellow;
+    text-decoration-thickness: 10;
+  }
+  .slider-text3 {
+    margin-left: 14;
+    text-decoration-line: underline;
+    text-decoration-color: yellow;
+    text-decoration-thickness: 10;
+  }
+  @keyframes slide {
+    0% {margin-top:-420px;}
+    5% {margin-top:-280px;}
+    33% {margin-top:-280px;}
+    38% {margin-top:-140px;}
+    66% {margin-top:-140px;}
+    71% {margin-top:0px;}
+    100% {margin-top:0px;}
+  }

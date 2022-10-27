@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Antic+Didone&family=Bungee+Inline&family=Fredericka+the+Great&family=Monofett&family=Open+Sans:wght@300;400;800&family=Poppins:wght@200;300;400;500;700&family=Questrial&family=Raleway&family=Roboto&family=Zilla+Slab+Highlight&display=swap');
+
+.talent-entry-font {
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 15px;
+    width: 9vw;
+}
+.talent-entry-name {
+    margin-left: 2vw;
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 16px;
+    width: 10vw;
+}
+.talent-entry-container {
+    flex-direction: row;
+    display:flex;
+    justify-content: left;
+    width:60vw;
+    height: 70px;
+    align-items:center;
+    border-radius: 10px;
+    user-select: none;
+}
+.talent-entry-tag-field {
+    display: inline-flex;
+    border-radius: 5px;
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 12px;
+    padding: 5px;
+
+}
+.talent-entry-linkedin {
+    margin-right: 2vw;
+    margin-left: 2vw;
+    font-size: 35px;
+    color: #0072b1;
+}
+.talent-entry-linkedin:hover {
+    cursor:pointer;
+}
+.talent-entry-tag-years {
+    border-radius: 5px;
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 12px;
+    padding: 5px;
+}
+.talent-entry-company {
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 15px;
+    width: 5vw;
+    margin-left:2vw;
+}
+.talent-entry-tag-field-container {
+    width: 5vw;
+    background-color: white;
+}
+.talent-entry-location {
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 15px;
+    width: 20vw;
+}
