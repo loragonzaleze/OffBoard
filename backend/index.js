@@ -16,12 +16,17 @@ const test = require('./routes/api/sample')
 
 /** Connect routes to app. */
 const { graphQLSchema, graphQLRoot } = require('./routes/api/talent');
+const talentEntry = require('./routes/api/talentEntry');
+
+
+app.use('/talent-entry', talentEntry);
 app.use('/graphql', graphqlHTTP({
     schema: graphQLSchema,
    // rootValue: graphQLRoot,
     graphiql: true,
 }));
 app.use('/api/', test)
+
 
 
 const port = process.env.port || 5000;
