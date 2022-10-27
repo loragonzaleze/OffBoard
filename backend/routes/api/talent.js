@@ -1,7 +1,6 @@
 /** Using GraphQL */
 /** Setup of database */
 const express = require('express');
-//var { buildSchema, graphql } = require('graphql');
 const graphql = require("graphql")
 const { RowDescriptionMessage } = require('pg-protocol/dist/messages');
 const pgp = require('pg-promise')();
@@ -15,23 +14,12 @@ const connectionString = {
 const db = {}
 db.conn = pgp(connectionString)
 
-/**TODO: Make a schema for Talent that can retrieve everything */
-/** Schema for a talent */
-
 const {
-    GraphQLObjectType,
-    GraphQLID,
     GraphQLString,
-    GraphQLBoolean,
-    GraphQLList,
-    GraphQLNonNull,
-    GraphQLSchema
 } = graphql;
 
 
 /** Using GraphQL */
-
-
 var talentType = new graphql.GraphQLObjectType({
     name: 'Talent',
     fields: {
@@ -44,7 +32,6 @@ var talentType = new graphql.GraphQLObjectType({
         country: {type: GraphQLString},
     }
 });
-
 var queryType = new graphql.GraphQLObjectType({
     name: 'Query',
     fields: {
@@ -64,6 +51,8 @@ var queryType = new graphql.GraphQLObjectType({
                 })
             }
         },
+        /** Write conditionals for filtering data for users lists */
+
         users: {
             type: new graphql.GraphQLList(talentType),
             resolve: (_, {}) => {
@@ -71,6 +60,7 @@ var queryType = new graphql.GraphQLObjectType({
                 return db.conn.many(query)
                 .then(data => {
                     console.log("This is the list data")
+                    console.log(data)
                     return data 
                 })
             }
