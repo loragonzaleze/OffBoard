@@ -90,7 +90,6 @@ class TalentPage extends React.Component {
               })
             }
             </div>
-  
 
           </div>
         </div>

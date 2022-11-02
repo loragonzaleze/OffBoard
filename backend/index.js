@@ -23,7 +23,7 @@ app.use('/talent-entry', talentEntry);
 app.use('/graphql', graphqlHTTP({
     schema: graphQLSchema,
    // rootValue: graphQLRoot,
-    graphiql: true,
+    graphiql: false,
 }));
 app.use('/api/', test)
 
