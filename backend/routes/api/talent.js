@@ -43,7 +43,7 @@ var talentType = new graphql.GraphQLObjectType({
     }
 });
 var queryType = new graphql.GraphQLObjectType({
-    name: 'Query',
+    name: 'TalentQuery',
     fields: {
         user: {
             type: talentType,
@@ -72,6 +72,9 @@ var queryType = new graphql.GraphQLObjectType({
                     console.log("This is the list data")
                     console.log(data)
                     return data 
+                })
+                .catch(err => {
+                    return 'The following error occured: ', err;
                 })
             }
         }
