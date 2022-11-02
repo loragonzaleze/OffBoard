@@ -4,6 +4,9 @@ import './stylesheets/talent_page.css'
 import React, { useState } from 'react';
 import TalentEntry from "../components/talent-entry";
 import axios from 'axios';
+import {FcBusiness, FcRules, FcAdvertising, FcSettings, FcPhone,
+  FcBarChart, FcVoicePresentation, FcEditImage, FcGlobe, 
+  FcBiotech, FcMoneyTransfer, FcBullish, FcTwoSmartphones} from "react-icons/fc"
 
 // Main page of the website for recruiters, they can see who's been laid off etc.
 class TalentPage extends React.Component {
@@ -11,8 +14,28 @@ class TalentPage extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        talent: []
+        talent: [],
+        interests: {
+          business: false,
+          customerSupport: false,
+          dataScience: false,
+          design: false,
+          engineering: false,
+          finance: false,
+          informationTechnology: false,
+          legalPolicy: false,
+          marketing: false,
+          people: false,
+          productManagement: false,
+          researchScience: false,
+        },
       };
+    }
+
+    updateSelections = (name) => {
+      let arr = this.state.interests
+      arr[name] = !this.state.interests[name]
+      this.setState({interests: arr})
     }
 
 
@@ -65,13 +88,86 @@ class TalentPage extends React.Component {
             </text>
           </div>
           <div className = "talent-filter-bar">
-              talent bar!
+              Filters TODO
           </div>
           <div className = "talent-container">
             <div className = "talent-job-field-container">
-              job field
+              <text className = "talent-job-field-text">
+                Job Field
+              </text>
+              <button 
+              className = {this.state.interests['business'] ? "talent-button-clicked" : "talent-button"} 
+              onClick = {() => this.updateSelections('business')}>
+                  <FcBusiness size = {25} className = "interests-icon"/>
+                  Business
+              </button>
+              <button 
+              className = {this.state.interests['customerSupport'] ? "talent-button-clicked" : "talent-button"} 
+              onClick = {() => this.updateSelections('customerSupport')}>
+                  <FcPhone size = {25} className = "interests-icon"/>
+                  Customer Support
+              </button>
+              <button 
+              className = {this.state.interests['dataScience'] ? "talent-button-clicked" : "talent-button"} 
+              onClick = {() => this.updateSelections('dataScience')}>
+                  <FcBarChart size = {25} className = "interests-icon"/>
+                  Data Science
+              </button>
+              <button 
+              className = {this.state.interests['design'] ? "talent-button-clicked" : "talent-button"} 
+              onClick = {() => this.updateSelections('design')}>
+                  <FcEditImage size = {25} className = "interests-icon"/>
+                  Design
+              </button>
+              <button 
+              className = {this.state.interests['engineering'] ? "talent-button-clicked" : "talent-button"} 
+              onClick = {() => this.updateSelections('engineering')}>
+                  <FcSettings size = {25} className = "interests-icon"/>
+                  Engineering
+              </button>
+              <button 
+              className = {this.state.interests['financeAccounting'] ? "talent-button-clicked" : "talent-button"} 
+              onClick = {() => this.updateSelections('financeAccounting')}>
+                  <FcMoneyTransfer size = {25} className = "interests-icon"/>
+                  Finance and Accounting
+              </button>
+              <button 
+              className = {this.state.interests['informationTechnology'] ? "talent-button-clicked" : "talent-button"} 
+              onClick = {() => this.updateSelections('informationTechnology')}>
+                  <FcTwoSmartphones size = {25} className = "interests-icon"/>
+                  Information Technology
+              </button>
+              <button 
+              className = {this.state.interests['legalPolicy'] ? "talent-button-clicked" : "talent-button"} 
+              onClick = {() => this.updateSelections('legalPolicy')}>
+                  <FcRules size = {25} className = "interests-icon"/>
+                  Legal and Policy
+              </button>
+              <button 
+              className = {this.state.interests['marketing'] ? "talent-button-clicked" : "talent-button"} 
+              onClick = {() => this.updateSelections('marketing')}>
+                  <FcAdvertising size = {25} className = "interests-icon"/>
+                  Marketing
+              </button>
+              <button 
+              className = {this.state.interests['people'] ? "talent-button-clicked" : "talent-button"} 
+              onClick = {() => this.updateSelections('people')}>
+                  <FcVoicePresentation size = {25} className = "interests-icon"/>
+                  People
+              </button>
+              <button 
+              className = {this.state.interests['productManagement'] ? "talent-button-clicked" : "talent-button"} 
+              onClick = {() => this.updateSelections('productManagement')}>
+                  <FcGlobe size = {25} className = "interests-icon"/>
+                  Product Management
+              </button>
+              <button 
+              className = {this.state.interests['researchScience'] ? "talent-button-clicked" : "talent-button"} 
+              onClick = {() => this.updateSelections('researchScience')}>
+                  <FcBiotech size = {25} className = "interests-icon"/>
+                  Research and Science
+              </button>
             </div>
-
             <div className = "talent-results">
             {
               this.state.talent.map((talent) => {

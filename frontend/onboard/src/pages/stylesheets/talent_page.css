@@ -2,32 +2,30 @@
 .talent-top-bar {
     display: flex;
     width: 100vw;
-    margin-top: 2vh;
     align-items:center;
     justify-content:center;
     height: 100px;
-    background-color: yellow;
+    background-color: white;
+    border-bottom: lightgray 2px solid;
 }
 .talent-logo {
     font-family: "Open Sans";
     font-weight: 700;
     font-size: 42px;
     color: #0078f5;
+    user-select:none;
 }
 .talent-filter-bar {
     display: flex;
     align-items:center;
     justify-content:center;
     width: 100vw;
-    background-color: lightblue;
+    background-color: white;
     height: 80px;
-}
-.talent-filter-box {
-    background-color: red;
 }
 .talent-job-field-container {
     width: 20vw;
-    background-color: gray;
+    
 }
 .talent-results {
     width: 60vw;
@@ -38,10 +36,63 @@
     display:flex;
     flex-direction: row;
     width: 80vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
 }
 .talent-main-container {
     display:flex;
     justify-content:center;
     align-items: center;
     flex-direction: column;
+    background-color: #d3d3d350;
+}
+.talent-button {
+    user-select:none;
+    margin-left:10px;
+    margin-right:10px;
+    margin-bottom:5px;
+    margin-top:5px;
+    font-family:'Poppins';
+    font-size:16px;
+    font-weight:500;
+    width: 19vw;
+    height: 50px;
+    background-color: white;
+    outline: none;
+    border: 0px;
+    border-radius: 10px;
+    text-align:left;
+    display:flex;
+    align-items:center;
+}
+.talent-button:hover {
+    cursor: pointer;
+}
+.talent-button-clicked {
+    user-select:none;
+    text-align:left;
+    margin-left:10px;
+    margin-right:10px;
+    margin-bottom:5px;
+    margin-top:5px;
+    font-family:'Poppins';
+    font-size:16px;
+    font-weight:500;
+    width: 19vw;
+    height: 50px;
+    background-color: gainsboro;
+    outline: none;
+    border: 0px;
+    border-radius: 10px;
+    display:flex;
+    align-items:center;
+}
+.talent-button-clicked:hover {
+    cursor:pointer;
+}
+.talent-job-field-text {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 20px;
+    user-select:none;
 }
