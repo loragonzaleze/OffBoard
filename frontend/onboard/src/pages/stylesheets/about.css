@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Antic+Didone&family=Bungee+Inline&family=Fredericka+the+Great&family=Monofett&family=Open+Sans:wght@300;400;800&family=Poppins:wght@200;300;400;500;700&family=Questrial&family=Raleway&family=Roboto&family=Zilla+Slab+Highlight&display=swap');
+
+.about-logo {
+    position: absolute;
+    font-family: "Open Sans";
+    top: 0px;
+    left: 0px;
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 35px;
+    color: #0078f5;
+    font-weight: 700;
+    /* pointer-events: none; */
+}
+
+.about-logo:hover {
+    cursor: pointer;
+    color: #0076f576;
+}
+
+.about-centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:40vh;  
+    flex-direction:column;
+    user-select: none;
+}
+
+.about-subtitle-text {
+    font-family: 'Open Sans';
+    font-weight: 500;
+    font-size: 25px;
+    color: #0078f5
+}
+.about-bottom-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:80vh;  
+    flex-direction:column;
+    user-select: none;
+}
+
+.about-title-text {
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 55px;
+    color: #0078f5
+}
+
+.about-row-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.about-login-button {
+    font-family: "Open Sans";
+    margin: 10px;
+    margin-right: 20px;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+.about-login-button:hover {
+    cursor: pointer;
+    color: gray;
+}
+.about-signup-button {
+    font-family: "Open Sans";
+    margin: 10px;
+    margin-right: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #0078f5;
+}
+.about-signup-button:hover {
+    cursor: pointer;
+    color: #0076f576;
+}
+
+.about-image {
+    margin-right:20px;
+}
