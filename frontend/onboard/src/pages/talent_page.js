@@ -83,6 +83,7 @@ class TalentPage extends React.Component {
                     job = {talent.job_title}
                     years = {10} // TODO add YOE to GraphQL schema
                     field = {talent.job_category}
+                    resume = {talent.resume}
                     location = {talent.location}
                     company = "Google" // TODO add current company to GraphQL schema
                     linkedin = {talent.linkedin}/>
