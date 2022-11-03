@@ -89,3 +89,9 @@
     margin-right: 5px;
     margin-left: 12px;
 }
+
+.interests-error-text {
+    font-family: 'Poppins';
+    font-size: 20px;
+    color:#ff0000;
+}

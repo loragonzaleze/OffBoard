@@ -74,6 +74,7 @@ router.post('/', (req, res) => {
                 );
             })
             .catch(err => {
+                console.log(err)
                 console.log("Error adding " + email + " to the database!");
                 res.status(400).send(
                     {
