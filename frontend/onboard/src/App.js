@@ -14,7 +14,7 @@ import Mission from './pages/mission.js'
 import Team from './pages/team.js'
 import SignUp from './pages/signup.js'
 import TalentPage from './pages/talent_page.js'
-
+import ResumeUpload from "./pages/resume.js";
 
 
 class App extends Component {
@@ -35,6 +35,7 @@ class App extends Component {
             <Route path="/about" element={<About/>} />
             <Route path="/sign-up" element={<SignUp/>} />
             <Route path="/talent-page" element={<TalentPage/>} />
+            <Route path="/resume" element={<ResumeUpload/>} />
           </Routes>
         </Router>
       </div>

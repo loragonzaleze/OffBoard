@@ -59,6 +59,9 @@ function TalentEntry(props) {
             {props.field}
         </div>
       </div>
+      <div className="talent-entry-resume">
+        <a href={props.resume} download>Resume</a>        
+      </div>
       <BsLinkedin className = "talent-entry-linkedin" 
       onClick = {() => window.open(props.linkedin, '_blank')}/>
       <div className = "talent-entry-location">{props.location}</div>
