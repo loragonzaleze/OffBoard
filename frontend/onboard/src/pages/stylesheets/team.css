@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Antic+Didone&family=Bungee+Inline&family=Fredericka+the+Great&family=Monofett&family=Open+Sans:wght@300;400;800&family=Poppins:wght@200;300;400;500;700&family=Questrial&family=Raleway&family=Roboto&family=Zilla+Slab+Highlight&display=swap');
 
-.about-logo {
+.team-logo {
     position: absolute;
     font-family: "Open Sans";
     top: 0px;
@@ -13,12 +13,12 @@
     /* pointer-events: none; */
 }
 
-.about-logo:hover {
+.team-logo:hover {
     cursor: pointer;
     color: #0076f576;
 }
 
-.about-centered-container {
+.team-centered-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,13 +27,14 @@
     user-select: none;
 }
 
-.about-subtitle-text {
+.team-subtitle-text {
     font-family: 'Poppins';
     font-weight: 500;
-    font-size: 20px;
+    font-size: 25px;
     color: #0078f5
 }
-.about-bottom-container {
+
+.team-bottom-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,43 +43,22 @@
     user-select: none;
 }
 
-.about-title-text {
+.team-title-text {
     font-family: 'Open Sans';
     font-weight: 600;
-    font-size: 55px;
+    font-size: 40px;
     color: #0078f5
 }
 
-.about-row-container {
+.team-row-container {
     display: flex;
     flex-direction: row;
 }
 
-.about-login-button {
-    font-family: "Open Sans";
-    margin: 10px;
-    margin-right: 20px;
-    font-size: 20px;
-    font-weight: 600;
-
-}
-.about-login-button:hover {
-    cursor: pointer;
-    color: gray;
-}
-.about-signup-button {
-    font-family: "Open Sans";
-    margin: 10px;
-    margin-right: 20px;
-    font-size: 20px;
-    font-weight: 600;
-    color: #0078f5;
-}
-.about-signup-button:hover {
-    cursor: pointer;
-    color: #0076f576;
-}
-
-.about-image {
-    margin-right:20px;
+.team-image {
+    width:200px;
+    height:200px;
+    object-fit: cover;
+    border-radius:50%;
+    margin-right:5px
 }
