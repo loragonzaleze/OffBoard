@@ -31,7 +31,7 @@ function About() {
         </div>
         <div className = "about-bottom-container">
           <div className ="about-subtitle-text">Companies that are in the program:</div>
-          <div class ="about-row-container" >
+          <div className ="about-row-container" >
               <img className="about-image" style={{ width: 50, height: 50 }} src={google} alt="google image" />
               <img className="about-image" style={{ width: 50, height: 50 }} src={meta} alt="meta image" />
           </div>
