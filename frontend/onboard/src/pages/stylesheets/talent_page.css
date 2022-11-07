@@ -1,98 +1,97 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Antic+Didone&family=Bungee+Inline&family=Fredericka+the+Great&family=Monofett&family=Open+Sans:wght@300;400;800&family=Poppins:wght@200;300;400;500;700&family=Questrial&family=Raleway&family=Roboto&family=Zilla+Slab+Highlight&display=swap');
 .talent-top-bar {
-    display: flex;
-    width: 100vw;
-    align-items:center;
-    justify-content:center;
-    height: 100px;
-    background-color: white;
-    border-bottom: lightgray 2px solid;
+	display: flex;
+	width: 100vw;
+	align-items: center;
+	justify-content: center;
+	height: 100px;
+	background-color: white;
+	border-bottom: lightgray 2px solid;
 }
 .talent-logo {
-    font-family: "Open Sans";
-    font-weight: 700;
-    font-size: 42px;
-    color: #0078f5;
-    user-select:none;
+	font-family: 'Open Sans';
+	font-weight: 700;
+	font-size: 42px;
+	color: #4685e3;
+	user-select: none;
 }
 .talent-filter-bar {
-    display: flex;
-    align-items:center;
-    justify-content:center;
-    width: 100vw;
-    background-color: white;
-    height: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	background-color: white;
+	height: 80px;
 }
 .talent-job-field-container {
-    width: 20vw;
-    
+	width: 20vw;
 }
 .talent-results {
-    width: 60vw;
+	width: 60vw;
 }
 .talent-container {
-    align-items: center;
-    justify-content: center;
-    display:flex;
-    flex-direction: row;
-    width: 80vw;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	flex-direction: row;
+	width: 80vw;
+	padding-top: 5vh;
+	padding-bottom: 5vh;
 }
 .talent-main-container {
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #d3d3d350;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-color: #d3d3d350;
 }
 .talent-button {
-    user-select:none;
-    margin-left:10px;
-    margin-right:10px;
-    margin-bottom:5px;
-    margin-top:5px;
-    font-family:'Poppins';
-    font-size:16px;
-    font-weight:500;
-    width: 19vw;
-    height: 50px;
-    background-color: white;
-    outline: none;
-    border: 0px;
-    border-radius: 10px;
-    text-align:left;
-    display:flex;
-    align-items:center;
+	user-select: none;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	font-family: 'Poppins';
+	font-size: 16px;
+	font-weight: 500;
+	width: 19vw;
+	height: 50px;
+	background-color: white;
+	outline: none;
+	border: 0px;
+	border-radius: 10px;
+	text-align: left;
+	display: flex;
+	align-items: center;
 }
 .talent-button:hover {
-    cursor: pointer;
+	cursor: pointer;
 }
 .talent-button-clicked {
-    user-select:none;
-    text-align:left;
-    margin-left:10px;
-    margin-right:10px;
-    margin-bottom:5px;
-    margin-top:5px;
-    font-family:'Poppins';
-    font-size:16px;
-    font-weight:500;
-    width: 19vw;
-    height: 50px;
-    background-color: gainsboro;
-    outline: none;
-    border: 0px;
-    border-radius: 10px;
-    display:flex;
-    align-items:center;
+	user-select: none;
+	text-align: left;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	font-family: 'Poppins';
+	font-size: 16px;
+	font-weight: 500;
+	width: 19vw;
+	height: 50px;
+	background-color: gainsboro;
+	outline: none;
+	border: 0px;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
 }
 .talent-button-clicked:hover {
-    cursor:pointer;
+	cursor: pointer;
 }
 .talent-job-field-text {
-    font-family: 'Poppins';
-    font-weight: 500;
-    font-size: 20px;
-    user-select:none;
+	font-family: 'Poppins';
+	font-weight: 500;
+	font-size: 20px;
+	user-select: none;
 }
