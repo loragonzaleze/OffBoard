@@ -9,7 +9,8 @@ Our mission is to flip the hiring process. Let recruiters reach out to you inste
 
 1. Install code editor with Git integration ([Visual Studio Code] (https://code.visualstudio.com/)
 2. Clone repository to local machine
-3. EDWIN help us here
+3. Follow instructions for frontend
+3. EDWIN help us here (Backend)
 
 ## Reporting Bugs
 
