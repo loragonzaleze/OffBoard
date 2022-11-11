@@ -8,10 +8,17 @@ const JobseekerForm = () => {
 	const [company, setCompany] = useState('');
 	const [author, setAuthor] = useState('mario');
 
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const jobSeeker = { fullname, email, mobile, company, author };
+
+		console.log(jobSeeker);
+	};
+
 	return (
 		<div className="create">
 			<h2>Get on the List</h2>
-			<form>
+			<form onSubmit={handleSubmit}>
 				<label>Full name:</label>
 				<input
 					type="text"
