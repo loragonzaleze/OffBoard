@@ -6,11 +6,11 @@ const JobseekerForm = () => {
 	const [email, setEmail] = useState('');
 	const [mobile, setMobile] = useState('');
 	const [company, setCompany] = useState('');
-	const [author, setAuthor] = useState('mario');
+	const [department, setDepartment] = useState('select');
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const jobSeeker = { fullname, email, mobile, company, author };
+		const jobSeeker = { fullname, email, mobile, company, department };
 
 		console.log(jobSeeker);
 	};
@@ -48,7 +48,10 @@ const JobseekerForm = () => {
 					onChange={(e) => setCompany(e.target.value)}
 				></input>
 				<label>Department:</label>
-				<select value={author} onChange={(e) => setAuthor(e.target.value)}>
+				<select
+					value={department}
+					onChange={(e) => setDepartment(e.target.value)}
+				>
 					<option value="Business">Business</option>
 					<option value="Customer Support">Customer Support</option>
 					<option value="Data Science">Data Science</option>
