@@ -42,7 +42,7 @@ function ResumeUpload() {
         location.state.resume = data.Location
         console.log("Success")
 
-        axios.post('http://localhost:5000/talent-entry', location.state).then((res, err) => {
+        axios.post('http://localhost:5001/talent-entry', location.state).then((res, err) => {
             if(err) {
                 console.log(err)
             } else {

@@ -25,16 +25,21 @@
 }
 .talent-job-field-container {
 	width: 20vw;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 10vw;
 }
 .talent-results {
 	width: 60vw;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 5vw;
+
 }
 .talent-container {
 	align-items: center;
 	justify-content: center;
-	display: flex;
-	flex-direction: row;
-	width: 80vw;
+	width: 100vw;
 	padding-top: 5vh;
 	padding-bottom: 5vh;
 }
@@ -43,6 +48,7 @@
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	/* background-color: red; */
 	background-color: #f6f6f6;
 }
 .talent-button {
@@ -94,4 +100,12 @@
 	font-weight: 500;
 	font-size: 20px;
 	user-select: none;
+	margin-left: 12px;
+}
+
+.talent-results-count {
+    font-family: "Poppins";
+    color: #9d9d9d;
+    padding-left: 2vw;  
+	padding-bottom: 10px;
 }

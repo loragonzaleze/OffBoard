@@ -61,6 +61,26 @@ var queryType = new graphql.GraphQLObjectType({
                 })
             }
         },
+
+        userJobCategory : {
+            type: new graphql.GraphQLList(talentType),
+            args: {
+                job_category: {type: graphql.GraphQLString}
+            },
+            resolve: (_, {job_category}) => {
+                const query = 'SELECT * FROM talent WHERE job_category = \'' + job_category + "\';";
+                return db.many(query)
+                .then(data => {
+                    console.log("This is the list data")
+                    console.log(data)
+                    return data;
+                })
+                .catch(err => {
+                    return 'The following error occured: ', err;
+                })
+            }
+        },
+        
         /** Write conditionals for filtering data for users lists */
 
         users: {
