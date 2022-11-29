@@ -29,20 +29,99 @@ class TalentPage extends React.Component {
           productManagement: false,
           researchScience: false,
         },
+        filteredTalent: [],
+        currentlySelectedTalentMap: new Map(),
+        categoryToName: {
+          "business": "Business",
+          "customerSupport": "Customer Support",
+          "dataScience": "Data Science",
+          "design": "Design",
+          "engineering": "Engineering",
+          "financeAccounting": "Finance and Accounting",
+          "informationTechnology": "Information Technology",
+          "legalPolicy": "Legal and Policy",
+          "marketing": "Marketing",
+          "people": "People",
+          "productManagement": "Product Management",
+          "researchScience": "Research and Science",
+        }
       };
     }
-
+    /** Filter results based on buttons clicked on side */ 
     updateSelections = (name) => {
       let arr = this.state.interests
       arr[name] = !this.state.interests[name]
       this.setState({interests: arr})
+      let filtered = []
+      if(arr[name]) {
+        let map = this.state.currentlySelectedTalentMap;
+        filtered = this.state.talent.filter((talent) => {return talent.job_category === this.state.categoryToName[name]})
+        let currFilter = [];
+        if(!map.has(name)){
+          map.set(name, filtered)
+        }
+        this.setState({currentlySelectedTalentMap: map})
+
+        map.forEach((value, key) => {
+          currFilter = currFilter.concat(value)
+        })
+        this.setState({filteredTalent: currFilter})
+
+      } else {
+        let map = this.state.currentlySelectedTalentMap;
+        map.delete(name)
+        this.setState({currentlySelectedTalentMap: map})
+        let currFilter = [];
+        map.forEach((value, key) => {
+          currFilter = currFilter.concat(value)
+        })
+        this.setState({filteredTalent: currFilter})
+
+        if(this.state.currentlySelectedTalentMap.size === 0){
+          this.setState({filteredTalent: this.state.talent})
+        }
+      }
+
+    }
+
+    returnTalentList = () => {
+      let talentList = [];
+      let alt = false;
+      console.log(this.state.filteredTalent)
+      for(let i = 0; i < this.state.filteredTalent.length; i++){
+        let talent = this.state.filteredTalent[i];
+        talentList.push( <TalentEntry 
+          key = {talent.email}
+          alt = {alt} 
+          name = {talent.full_name} 
+          job = {talent.job_title}
+          years = {10} // TODO add YOE to GraphQL schema
+          field = {talent.job_category}
+          resume = {talent.resume}
+          location = {talent.location}
+          company = "Google" // TODO add current company to GraphQL schema
+          linkedin = {talent.linkedin}/>)
+          alt = !alt;
+
+      }
+      return talentList;
+
     }
 
 
     componentDidMount() {
       this.retrieveTalentList()
-      .then(res => this.setState({talent: res.data.data.users}))
+      .then(res => {
+        this.setState({talent: res.data.data.users})
+        this.setState({filteredTalent: res.data.data.users})
+      })
       .catch((error) => console.log(error));
+
+
+      // console.log("Testing graphql query")
+      // this.retrieveTalentByJobCategory("Engineering")
+      // .then(res => console.log(res.data.data.userJobCategory))
+      // .catch((error) => console.log(error));
     }
 
     async retrieveTalentList() {
@@ -66,7 +145,38 @@ class TalentPage extends React.Component {
       `;
 
       return axios({
-        url: 'http://localhost:5000/graphql', //Change to handle any URL + graphql
+        url: 'http://localhost:5001/graphql', //Change to handle any URL + graphql
+        method: "POST",
+        headers: header,
+        data: {
+          query: talentListQuery,
+          variables: {}
+        }
+      })
+    }
+
+    async retrieveTalentByJobCategory(job_category) {
+      const header = {
+        "Content-Type": "application/json"
+      };
+      var talentListQuery = `
+        query TalentQuery {
+          userJobCategory(job_category: "${job_category}") {
+            full_name
+            email
+            resume
+            url
+            job_title
+            job_category
+            linkedin
+            location
+            country
+          }
+        }
+      `;
+
+      return axios({
+        url: 'http://localhost:5001/graphql', //Change to handle any URL + graphql
         method: "POST",
         headers: header,
         data: {
@@ -86,9 +196,6 @@ class TalentPage extends React.Component {
             <text className = "talent-logo">
               HRnext
             </text>
-          </div>
-          <div className = "talent-filter-bar">
-              Filters TODO
           </div>
           <div className = "talent-container">
             <div className = "talent-job-field-container">
@@ -169,23 +276,13 @@ class TalentPage extends React.Component {
               </button>
             </div>
             <div className = "talent-results">
-            {
-              this.state.talent.map((talent) => {
-                return (
-                  <TalentEntry 
-                    key = {talent.email}
-                    alt = {false} 
-                    name = {talent.full_name} 
-                    job = {talent.job_title}
-                    years = {10} // TODO add YOE to GraphQL schema
-                    field = {talent.job_category}
-                    resume = {talent.resume}
-                    location = {talent.location}
-                    company = "Google" // TODO add current company to GraphQL schema
-                    linkedin = {talent.linkedin}/>
-                )
-              })
-            }
+                <div className = "talent-results-count">
+                  {this.state.filteredTalent.length} results
+                </div>
+                {
+                  this.returnTalentList().map((talent) =>{return talent})
+                }
+   
             </div>
 
           </div>

@@ -21,6 +21,7 @@ function TalentEntry(props) {
 		['Engineering', '#ffe4b2'],
 		['Product', '#ffcccc'],
 		['Business', '#ccffcc '],
+		['Customer Support', '#ccffff'],
 	]);
 	useEffect(() => {
 		// Set Year Tag info

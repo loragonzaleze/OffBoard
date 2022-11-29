@@ -23,13 +23,13 @@ app.use('/talent-entry', talentEntry);
 app.use('/graphql', graphqlHTTP({
     schema: graphQLSchema,
    // rootValue: graphQLRoot,
-    graphiql: false,
+    graphiql: true,
 }));
 app.use('/api/', test)
 
 
 
-const port = process.env.port || 5000;
+const port = process.env.port || 5001;
 
 app.listen(port, () => {
     console.log('Server has started on port ' + port);

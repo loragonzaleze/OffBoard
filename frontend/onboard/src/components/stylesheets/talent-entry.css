@@ -4,14 +4,14 @@
     font-family: "Poppins";
     font-weight: 400;
     font-size: 15px;
-    width: 9vw;
+    width: 12vw;
 }
 .talent-entry-name {
     margin-left: 2vw;
     font-family: "Poppins";
     font-weight: 500;
     font-size: 16px;
-    width: 10vw;
+    width: 15vw;
 }
 .talent-entry-container {
     flex-direction: row;
@@ -40,6 +40,7 @@
 }
 .talent-entry-linkedin:hover {
     cursor:pointer;
+
 }
 .talent-entry-tag-years {
     border-radius: 5px;
@@ -52,13 +53,13 @@
     font-family: "Poppins";
     font-weight: 400;
     font-size: 15px;
-    width: 5vw;
+    width: 8vw;
     margin-left:2vw;
 }
 .talent-entry-tag-field-container {
-    width: 5vw;
     background-color: white;
 }
+
 .talent-entry-location {
     font-family: "Poppins";
     font-weight: 400;
@@ -66,6 +67,9 @@
     width: 20vw;
 }
 .talent-entry-resume {
-    width: 15vw;
+    width: 8vw;
+    margin-left: 2vw;
     text-align: center;
+    justify-content: center;
 }
+
