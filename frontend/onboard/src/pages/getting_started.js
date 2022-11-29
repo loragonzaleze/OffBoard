@@ -14,6 +14,10 @@ function GettingStarted() {
         let path = `sign-up`;
         navigate(path);
     }
+    const goToTalent = () =>{
+        let path = `talent-page`;
+        navigate(path);
+    }
     return (
       <div className = "centered-container">
           <div className = "logo">
@@ -42,7 +46,7 @@ function GettingStarted() {
                     Finding a Job
                     <BsArrowRightCircle style = {{marginLeft: 5}}/>
                 </button>
-                <button className = "button-container">
+                <button className = "button-container" onClick = {goToTalent}>
                     Looking to Hire
                     <BsArrowRightCircle style = {{marginLeft: 5}}/>
                 </button>
