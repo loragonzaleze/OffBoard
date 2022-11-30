@@ -25,7 +25,7 @@ function BottomGoTos() {
         navigate(path);
     }
     return (
-        <div className="row-container" style = {{position:"absolute", bottom: 50}}>
+        <div className="row-container" style = {{position:"absolute", bottom: 30}}>
         <div className = "bottom-go-tos" onClick = {goToAbout}> About </div>
         <div className = "bottom-go-tos" onClick = {goToMission}> Mission </div>
         <div className = "bottom-go-tos" onClick = {goToTeam}> Team </div>

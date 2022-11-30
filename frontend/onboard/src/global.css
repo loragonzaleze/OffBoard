@@ -35,7 +35,7 @@
 }
 .logo {
 	position: absolute;
-	font-family: 'Open Sans';
+	font-family: 'Poppins';
 	top: 0px;
 	left: 0px;
 	margin-top: 10px;
@@ -46,7 +46,7 @@
 	pointer-events: none;
 }
 .bottom-go-tos {
-	font-family: 'Open Sans';
+	font-family: 'Poppins';
 	margin: 10px;
 	margin-right: 40px;
 	font-size: 18px;
