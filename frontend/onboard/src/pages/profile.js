@@ -3,7 +3,9 @@ import "./stylesheets/profile.css"
 import "../global.css"
 import { useNavigate } from "react-router-dom";
 import ali from './images/ali_abusulb.jfif';
-import meta from './images/meta.png';
+import {FcBusiness, FcRules, FcAdvertising, FcSettings, FcPhone,
+    FcBarChart, FcVoicePresentation, FcEditImage, FcGlobe, 
+    FcBiotech, FcMoneyTransfer, FcBullish, FcTwoSmartphones} from "react-icons/fc"
 
 function Profile() {
   let navigate = useNavigate(); 
@@ -28,15 +30,21 @@ function Profile() {
         <div className = "profile-logo" onClick = {goToHome}>HRnext</div>
         <div className = "profile-row-container-large">
             <div className = "profile-left-container">
-                <img className="profile-image" src={ali} alt='ali' />
-                <text className="profile-title-text"> Ali Abusulb </text>
-                <text className="profile-normal-text">
-                    Hey, I'm Ali! aaaaaaaaaaaaaaaaaaaaaaaaaa
-                    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                    aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                </text>
-                <div className="profile-row-container">
-                    <img src={meta} width="100" height="100" alt='meta' />
+                <img className="profile-image" src={ali} alt='IMPORT IMAGE HERE' />
+                <text className="profile-name-text"> IMPORT NAME HERE </text>
+                <div className="profile-bio-box">
+                    <text className="profile-bio-text">
+                        IMPORT BIOGRAPHY HERE
+                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                        aaa
+                    </text>
+                </div>
+                <div className="profile-left-container-bottom-box">
+                    <div className="profile-row-container-specialty">
+                        <FcBiotech size = {60} title="special"/>
+                        <FcAdvertising size = {60} title="special"/>
+                        <FcBusiness size = {60} title="special"/>
+                    </div>
                 </div>
             </div>
             <div className = "profile-right-container">
