@@ -18,6 +18,11 @@ function Login() {
     navigate(path);
   }
 
+  const goToSignUp = () => {
+    let path = `../sign-up`;
+    navigate(path);
+  }
+
   const goToEndorsed = () => {
     // TODO check that inputted email is valid (not blank, is valid email (@somecompany))
     // make sure email exists within database of recruiters endorsing ppl
@@ -47,9 +52,9 @@ function Login() {
         </label>
         <label>
           <div className = "row-container">
-            <p className = "login-email-label">Password</p>
+            <p className = "login-email-label" style={{paddingTop: 10}}>Password</p>
             <p className = "login-email-label"
-            style = {{color:'red', marginleft: '2px'}}>*</p>
+            style = {{color:'red', marginleft: '2px', paddingTop: 10}}>*</p>
           </div>
           <input className = "login-input-box" onChange = {e =>setPassword(e.target.value)}/>
         </label>
@@ -69,7 +74,7 @@ function Login() {
           <div className = "login-endorsement-button">Ask your company to endorse you</div> 
           {/*TODO add a link here for endorsement*/}
         </div>
-        <div className = "signup-button" 
+        <div className = "signup-button" onClick = {goToSignUp} 
         style = {{position:"absolute", top: 10, right: 10, marginRight: 10}}>
           Sign Up
         </div>
