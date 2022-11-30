@@ -26,7 +26,7 @@ function JobTitle() {
         /**TODO add message for empty title */
         location.state.jobTitle = jobTitle;
         console.log(location.state)
-        navigate('/resume', {state: location.state});
+        navigate('/job-preferences', {state: location.state});
     }
     return (
         <div>

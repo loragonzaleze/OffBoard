@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AWS from 'aws-sdk';
 import "../global.css"
 import "./stylesheets/resume.css"
@@ -21,6 +21,9 @@ function ResumeUpload() {
     })
 
 
+    useEffect(() => {
+        console.log(location.state)
+    }, [""])
     const handleResumeInput = (e) => {
         setFile(e.target.files[0]);
     }
