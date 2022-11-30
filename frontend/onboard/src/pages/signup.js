@@ -237,13 +237,6 @@ function SignUp() {
               placeholder='Email'/>
           </div>
         </div>
-        {validEmail ? null:
-            <div className='Row-upload'>
-              <p className='wrong-password-text'>
-                Invalid Email
-              </p>
-            </div>
-            }
         <div className="Row">
           <div className="div-row-one">
             <p>Password</p>
@@ -281,6 +274,13 @@ function SignUp() {
           </p>
 
         </div>}
+        {validEmail ? null:
+            <div className='Row-upload'>
+              <p className='wrong-password-text'>
+                Invalid Email
+              </p>
+            </div>
+            }
         {(!allFieldsFilledOut && clickedSignUp) ? 
         <div className='Row-upload'>
           <p className="wrong-password-text"

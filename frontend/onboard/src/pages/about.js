@@ -14,15 +14,15 @@ import { BsLightningCharge } from "react-icons/bs";
 function About() {
   let navigate = useNavigate(); 
   const goToLogin = () =>{ 
-    let path = `login`;
+    let path = `../login`;
     navigate(path);
   }
   const goToSignUp = () => {
-      let path = `sign-up`;
+      let path = `../sign-up`;
       navigate(path);
   }
   const goToTalent = () =>{
-    let path = `talent-page`;
+    let path = `../talent-page`;
     navigate(path);
   }
   const goToHome = () =>{
@@ -49,7 +49,7 @@ function About() {
             </div>
             <div className = "about-normal-text-2-box">
               <text className = "about-normal-text-2">
-                Our mission is to flip the hiring process. Let recruitors 
+                Our mission is to flip the hiring process. Let recruiters 
                 reach out to you instead of the other way around.
               </text>
             </div>
