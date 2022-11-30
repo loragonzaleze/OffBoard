@@ -8,8 +8,6 @@ import meta from './images/meta.png';
 import { BsArrowsAngleExpand } from "react-icons/bs";
 import { BsSearch } from "react-icons/bs";
 import { BsLightningCharge } from "react-icons/bs";
-// Our mission is to flip the hiring process. Let recruitors reach out to you
-// instead of the other way around
 
 function About() {
   let navigate = useNavigate(); 

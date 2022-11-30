@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Antic+Didone&family=Bungee+Inline&family=Fredericka+the+Great&family=Monofett&family=Open+Sans:wght@300;400;800&family=Poppins:wght@200;300;400;500;700&family=Questrial&family=Raleway&family=Roboto&family=Zilla+Slab+Highlight&display=swap');
+
+.profile-logo {
+	position: absolute;
+	font-family: 'Poppins';
+	top: 0px;
+	left: 0px;
+	margin-top: 10px;
+	margin-left: 20px;
+	font-size: 35px;
+	color: #4685e3;
+	font-weight: 700;
+	/* pointer-events: none; */
+}
+
+.profile-logo:hover {
+	cursor: pointer;
+	color: #0076f576;
+}
+
+.profile-centered-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20vh;
+	margin-bottom: 0;
+	flex-direction: column;
+	user-select: none;
+}
+
+.profile-left-container {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    height: 70vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    background-color: antiquewhite;
+}
+
+.profile-right-container {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    height: 70vh;
+    margin-right: 5vw;
+    background-color: antiquewhite;
+}
+
+.profile-row-container-large {
+	display: flex;
+	flex-direction: row;
+    margin-top: 15vh;
+}
+
+.profile-row-container {
+    display: flex;
+	flex-direction: row;
+}
+
+.profile-image {
+	width: 15vw;
+	height: 15vw;
+	object-fit: cover;
+	border-radius: 50%;
+    margin-left: 7.5vw;
+	margin-right: 7.5vw;
+    margin-top: 2vw;
+}
+
+.profile-title-text {
+    font: 'Poppins';
+    font-weight: 600;
+    font-size: large;
+    color:black;
+    text-align: center;
+}
+
+.profile-normal-text {
+    font: 'Poppins';
+    color: black;
+    text-align: center;
+}
