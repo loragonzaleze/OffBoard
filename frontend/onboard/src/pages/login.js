@@ -11,6 +11,7 @@ function Login() {
 
   // stores corporate email 
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const goToHome = () => {
     let path = `/`;
@@ -43,6 +44,14 @@ function Login() {
             style = {{color: 'red', marginLeft: '2px'}}>*</p>
           </div>
           <input className = "login-input-box" onChange = {e => setEmail(e.target.value)}/>
+        </label>
+        <label>
+          <div className = "row-container">
+            <p className = "login-email-label">Password</p>
+            <p className = "login-email-label"
+            style = {{color:'red', marginleft: '2px'}}>*</p>
+          </div>
+          <input className = "login-input-box" onChange = {e =>setPassword(e.target.value)}/>
         </label>
         <button className = "login-next-box" onClick = {goToEndorsed}>
             Next

@@ -1,19 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Antic+Didone&family=Bungee+Inline&family=Fredericka+the+Great&family=Monofett&family=Open+Sans:wght@300;400;800&family=Poppins:wght@200;300;400;500;700&family=Questrial&family=Raleway&family=Roboto&family=Zilla+Slab+Highlight&display=swap');
 .login-logo {
-	margin-top: 5vh;
-	font-family: 'Open Sans';
-	font-weight: 700;
-	font-size: 42px;
+	position: absolute;
+	font-family: 'Poppins';
+	top: 0px;
+	left: 0px;
+	margin-top: 10px;
+	margin-left: 20px;
+	font-size: 35px;
 	color: #4685e3;
+	font-weight: 700;
 }
 .login-logo:hover {
 	cursor: pointer;
 }
 .login-title-text {
-	font-family: 'Open Sans';
+	font-family: 'Poppins';
 	font-weight: 700;
 	font-size: 42px;
-	margin-top: 5vh;
+	margin-top: 20vh;
 }
 .login-subtitle-text {
 	margin-top: 2vh;
@@ -21,7 +25,7 @@
 	font-weight: 300px;
 	font-size: 22px;
 	color: lightslategray;
-	margin-bottom: 5vh;
+	margin-bottom: 0vh;
 }
 .login-input-box {
 	width: 550px;
