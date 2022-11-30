@@ -6,6 +6,7 @@ import "../global.css"
 import './stylesheets/login.css'
 import "./stylesheets/signupTalent.css"
 import { useNavigate, useSearchParams } from "react-router-dom";
+import validator from "validator"
 import axios from 'axios';
 
 
@@ -19,6 +20,7 @@ function SignUp() {
   const [personalUrl, setPersonalUrl] = React.useState("");
   const [location, setLocation] = React.useState("");
   const [email, setEmail] = React.useState("");
+  const [validEmail, setValidEmail] = React.useState(true);
   const [password, setPassword] = React.useState("");
   const [reenterPassword, setReenterPassword] = React.useState("");
   const [country, setCountry] = React.useState("United States");
@@ -50,7 +52,11 @@ function SignUp() {
       return;
     }
     setAllFieldsFilledOut(true);
-
+    setValidEmail(true)
+    if (!validator.isEmail(email)){
+      setValidEmail(false)
+      return;
+    }
     if(password !== reenterPassword){
       setMatchingPasswords(false);
       setPassword("")
@@ -227,10 +233,17 @@ function SignUp() {
               name="email"
               value={email}
               onChange={e => setEmail(e.target.value)}
-              className = "email-input-box" 
+              className = {validEmail ? "email-input-box": "wrong-password-input-box"}
               placeholder='Email'/>
           </div>
         </div>
+        {validEmail ? null:
+            <div className='Row-upload'>
+              <p className='wrong-password-text'>
+                Invalid Email
+              </p>
+            </div>
+            }
         <div className="Row">
           <div className="div-row-one">
             <p>Password</p>
