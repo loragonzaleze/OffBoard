@@ -88,22 +88,25 @@ class TalentPage extends React.Component {
       let talentList = [];
       let alt = false;
       console.log(this.state.filteredTalent)
-      for(let i = 0; i < this.state.filteredTalent.length; i++){
-        let talent = this.state.filteredTalent[i];
-        talentList.push( <TalentEntry 
-          key = {talent.email}
-          alt = {alt} 
-          name = {talent.full_name} 
-          job = {talent.job_title}
-          years = {10} // TODO add YOE to GraphQL schema
-          field = {talent.job_category}
-          resume = {talent.resume}
-          location = {talent.location}
-          company = "Google" // TODO add current company to GraphQL schema
-          linkedin = {talent.linkedin}/>)
-          alt = !alt;
-
-      }
+      // for (let j = 0; j < 6; j++) {
+        for(let i = 0; i < this.state.filteredTalent.length; i++){
+          let talent = this.state.filteredTalent[i];
+          talentList.push( <TalentEntry 
+            key = {talent.email}
+            alt = {alt} 
+            name = {talent.full_name} 
+            job = {talent.job_title}
+            years = {10} // TODO add YOE to GraphQL schema
+            field = {talent.job_category}
+            resume = {talent.resume}
+            location = {talent.location}
+            company = "Google" // TODO add current company to GraphQL schema
+            linkedin = {talent.linkedin}/>)
+            alt = !alt;
+  
+        }
+     // }
+      
       return talentList;
 
     }

@@ -13,10 +13,11 @@ app.use(express.urlencoded({extended: true}))
 
 /** Route files */
 const test = require('./routes/api/sample')
-
+const signup = require('./routes/api/signup')
 /** Connect routes to app. */
 const { graphQLSchema, graphQLRoot } = require('./routes/api/talent');
 const talentEntry = require('./routes/api/talentEntry');
+
 
 
 app.use('/talent-entry', talentEntry);
@@ -26,7 +27,7 @@ app.use('/graphql', graphqlHTTP({
     graphiql: true,
 }));
 app.use('/api/', test)
-
+app.use('/api/signup', signup)
 
 
 const port = process.env.port || 5001;
