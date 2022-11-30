@@ -1,0 +1,39 @@
+.job-preferences-work-location-container {
+    display:flex;
+    flex-direction: column;
+}
+.job-preferences-button-container {
+    margin: 5px;
+	font-family: 'Open Sans';
+	font-size: 21px;
+	font-weight: 600;
+	background-color: #f6f6f6;
+	height: 70px;
+	width: 270px;
+	border-radius: 7px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border: 0px;
+}
+.job-preferences-button-container:hover {
+	cursor: pointer;
+}
+.job-preferences-button-container-clicked {
+    margin: 5px;
+    font-family: 'Open Sans';
+	font-size: 21px;
+	font-weight: 600;
+	height: 70px;
+	width: 270px;
+	border-radius: 7px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border: 0px;
+	background-color: lightgray;
+}
+.job-preferences-title-text {
+	font-family: 'Poppins';
+	font-weight: 550;
+	font-size: 30px;
+	margin-bottom: 1.5vh;
+}

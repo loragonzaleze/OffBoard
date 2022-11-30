@@ -13,6 +13,7 @@ import TalentPage from './pages/talent_page.js';
 import ResumeUpload from './pages/resume.js';
 import JobseekerForm from './pages/jobseeker_form.js';
 import Profile from './pages/profile.js';
+import JobPreferences from './pages/job_preferences.js'
 
 class App extends Component {
 	render() {
@@ -34,6 +35,7 @@ class App extends Component {
 						<Route path="/resume" element={<ResumeUpload />} />
 						<Route path="/jobseeker_form" element={<JobseekerForm />} />
 						<Route path="/profile" element={<Profile />} />
+						<Route path = "/job-preferences" element={<JobPreferences/>} />
 					</Routes>
 				</Router>
 			</div>

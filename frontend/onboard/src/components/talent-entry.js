@@ -1,6 +1,11 @@
 import './stylesheets/talent-entry.css';
 import React, { useState, useEffect } from 'react';
 import { BsLinkedin } from 'react-icons/bs';
+import { BsFileEarmarkRichtext} from 'react-icons/bs'
+import Modal from 'react-bootstrap/Modal';
+import 'bootstrap/dist/css/bootstrap.min.css';  
+import Button from 'react-bootstrap/Button';
+
 // Row in main talent page
 // props:
 // name: ex. Bruce Maddux
@@ -15,6 +20,7 @@ function TalentEntry(props) {
 	const [years, setYears] = useState('');
 	const [yearColor, setYearColor] = useState('');
 	const [fieldColor, setFieldColor] = useState('#fff');
+	const [showModal, setShowModal] = useState(false);
 
 	// TODO Finish filling in the colors for all Job fields
 	const fieldToColor = new Map([
@@ -54,12 +60,15 @@ function TalentEntry(props) {
 			setContainerColor('#fff');
 		}
 	});
+	const renderModal = () => {
+		
+	}
 	return (
 		<div
 			className="talent-entry-container"
 			style={{ backgroundColor: containerColor }}
 		>
-			<text className="talent-entry-name">{props.name}</text>
+			<div className="talent-entry-name" onClick={()=> setShowModal(true)}>{props.name}</div>
 			<text className="talent-entry-font">{props.job}</text>
 			<div
 				className="talent-entry-tag-years"
@@ -78,7 +87,7 @@ function TalentEntry(props) {
 			</div>
 			<div className="talent-entry-resume">
 				<a href={props.resume} download>
-					Resume
+					<BsFileEarmarkRichtext style={{fontSize: 30}}/>
 				</a>
 			</div>
 			<BsLinkedin
@@ -86,6 +95,106 @@ function TalentEntry(props) {
 				onClick={() => window.open(props.linkedin, '_blank')}
 			/>
 			<div className="talent-entry-location">{props.location}</div>
+			{showModal && 
+				<Modal show={showModal} onHide={()=>setShowModal(false)} size="lg">
+				<Modal.Header closeButton>
+				<Modal.Title className="talent-entry-modal-title">
+					<text style = {{fontWeight: 600}}>{props.name}</text>
+					<BsLinkedin
+						className="talent-entry-modal-linkedin"
+						onClick={() => window.open(props.linkedin, '_blank')}
+					/>
+					<a href={props.resume} download>
+						<BsFileEarmarkRichtext style={{fontSize: 40}}/>
+					</a>
+				</Modal.Title>
+				</Modal.Header>
+				<Modal.Body className = "talent-entry-modal-body">
+					<text className="talent-entry-modal-body-title">
+						Contact info
+					</text>
+					<div className = "talent-entry-modal-body-container">
+						<text className="talent-entry-modal-body-small-title">
+							Mobile phone number
+						</text>
+						<text className="talent-entry-modal-body-p">
+							ADD PHONE NUMBER
+						</text>
+					</div>
+					<div className = "talent-entry-modal-body-container">
+						<text className="talent-entry-modal-body-small-title">
+							Email address
+						</text>
+						<text className="talent-entry-modal-body-p">
+							ADD EMAIL ADDRESS
+						</text>
+					</div>
+				</Modal.Body>
+				<Modal.Footer style = {{padding: 0}}/>
+
+
+				<Modal.Body className = "talent-entry-modal-body">
+					<text className="talent-entry-modal-body-title">
+						Work experience
+					</text>
+					<div className = "talent-entry-modal-body-container">
+						<text className="talent-entry-modal-body-small-title">
+							Previous company
+						</text>
+						<text className="talent-entry-modal-body-p">
+							ADD WORK EXP
+						</text>
+					</div>
+					<div className = "talent-entry-modal-body-container">
+						<text className="talent-entry-modal-body-small-title">
+							Team/Department
+						</text>
+						<text className="talent-entry-modal-body-p">
+							ADD PREV TEAM/DEP
+						</text>
+					</div>
+					<div className = "talent-entry-modal-body-container">
+						<text className="talent-entry-modal-body-small-title">
+							Job Title
+						</text>
+						<text className="talent-entry-modal-body-p">
+							ADD JOB TITLE
+						</text>
+					</div>
+					<div className = "talent-entry-modal-body-container">
+						<text className="talent-entry-modal-body-small-title">
+							Years of Experience
+						</text>
+						<text className="talent-entry-modal-body-p">
+							ADD YEARS OF EXPERIENCE
+						</text>
+					</div>
+				</Modal.Body>
+				<Modal.Footer style = {{padding: 0}}/>
+
+
+				<Modal.Body className = "talent-entry-modal-body">
+					<text className="talent-entry-modal-body-title">
+						Job preference
+					</text>
+					<div className = "talent-entry-modal-body-container">
+						<text className="talent-entry-modal-body-small-title">
+							Location
+						</text>
+						<text className="talent-entry-modal-body-p">
+							ADD LOCATION
+						</text>
+					</div>
+					<div className = "talent-entry-modal-body-container">
+						<text className="talent-entry-modal-body-small-title">
+							Salary Expectation
+						</text>
+						<text className="talent-entry-modal-body-p">
+							ADD SALARY EXPECTATION
+						</text>
+					</div>
+				</Modal.Body>
+			</Modal>}
 		</div>
 	);
 }

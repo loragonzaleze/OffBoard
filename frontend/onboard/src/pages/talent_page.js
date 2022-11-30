@@ -103,7 +103,6 @@ class TalentPage extends React.Component {
             company = "Google" // TODO add current company to GraphQL schema
             linkedin = {talent.linkedin}/>)
             alt = !alt;
-  
         }
      // }
       
@@ -287,7 +286,6 @@ class TalentPage extends React.Component {
                 }
    
             </div>
-
           </div>
         </div>
       );

@@ -13,6 +13,10 @@
     font-size: 16px;
     width: 15vw;
 }
+.talent-entry-name:hover {
+    cursor:pointer;
+    color:gray;
+}
 .talent-entry-container {
     flex-direction: row;
     display:flex;
@@ -35,12 +39,11 @@
 .talent-entry-linkedin {
     margin-right: 2vw;
     margin-left: 2vw;
-    font-size: 35px;
+    font-size: 40px;
     color: #0072b1;
 }
 .talent-entry-linkedin:hover {
     cursor:pointer;
-
 }
 .talent-entry-tag-years {
     border-radius: 5px;
@@ -72,4 +75,50 @@
     text-align: center;
     justify-content: center;
 }
-
+.talent-entry-modal-title {
+    font-family: "Poppins";
+    display:flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+    font-weight:600;
+    font-size:25px;
+    margin-left:20px;
+}
+.talent-entry-modal-linkedin {
+    margin-left: 20px;
+    font-size: 40px;
+    color: #0072b1;
+    margin-right:5px
+}
+.talent-entry-modal-linkedin:hover {
+    cursor:pointer;
+}
+.talent-entry-modal-body-title {
+    font-family: "Poppins";
+    font-weight:600;
+    font-size:20px;
+    padding-top: 15px;
+}
+.talent-entry-modal-body {
+    flex-direction:column;
+    display:flex;
+    margin-left: 20px;
+}
+.talent-entry-modal-body-small-title {
+    font-family: "Poppins";
+    font-weight:400;
+    font-size:13px;
+    color: gray;
+}
+.talent-entry-modal-body-p {
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 15px;
+}
+.talent-entry-modal-body-container {
+    padding-top: 12px;
+    padding-bottom:12px;
+    flex-direction:column;
+    display:flex;
+}

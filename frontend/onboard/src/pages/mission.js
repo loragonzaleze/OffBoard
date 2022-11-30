@@ -1,5 +1,4 @@
-// Mission of the team
-function Mission() {
+function TalentPage() {
     return (
       <div>
         <p>
@@ -9,5 +8,5 @@ function Mission() {
     );
   }
   
-  export default Mission;
+  export default TalentPage;
   

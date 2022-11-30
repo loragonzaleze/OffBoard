@@ -5,6 +5,7 @@ import AWS from 'aws-sdk';
 import "../global.css"
 import './stylesheets/login.css'
 import "./stylesheets/signupTalent.css"
+import "./stylesheets/contact.css"
 import { useNavigate, useSearchParams } from "react-router-dom";
 import validator from "validator"
 import axios from 'axios';
@@ -16,6 +17,8 @@ function SignUp() {
  
   const [firstName, setFirstName] = React.useState("");
   const [lastName, setLastName] = React.useState("");
+  const [phoneNumber, setPhoneNumber] = React.useState("");
+  const [github, setGithub] = React.useState("");
   const [linkedin, setLinkedin] = React.useState("");
   const [personalUrl, setPersonalUrl] = React.useState("");
   const [location, setLocation] = React.useState("");
@@ -38,6 +41,7 @@ function SignUp() {
   const checkNotEmptyInputs = () => {
     return firstName !== "" 
         && lastName !== "" 
+        && phoneNumber !== ""
         && location !== ""
         && email !== "" 
         && password !== "" 
@@ -68,6 +72,8 @@ function SignUp() {
       firstName: firstName,
       lastName: lastName,
       linkedin: linkedin,
+      phoneNumber: phoneNumber,
+      github: github,
       url: personalUrl,
       location: location,
       email: email,
@@ -142,7 +148,7 @@ function SignUp() {
       {firstSignup ? 
       <><div className="endorse-message">
             Welcome {firstName}, <span className='underline-company'>{company}</span> has endorsed you
-          </div><div className="login-subtitle-text">
+          </div><div className="login-subtitle-text" style = {{paddingBottom: "30px "}}>
               Tell us more about yourself!
             </div></> : <><div className="endorse-message">
             Welcome back {firstName}, <span className='underline-company'>{company}</span> has endorsed you
@@ -160,7 +166,11 @@ function SignUp() {
       <div className="container">
         <div className="Row">
           <div className="div-row-two">
-            <p>First Name</p>
+          <div className = "row-container">
+                <p className = "contact-email-label">First Name</p>
+                <p className = "contact-email-label" 
+                style = {{color: 'red', marginLeft: '2px'}}>*</p>
+              </div>
             <input 
                 name="firstName"
                 value={firstName}
@@ -171,7 +181,11 @@ function SignUp() {
                 />
           </div>
           <div className="div-row-two">
-            <p>Last Name</p>
+            <div className = "row-container">
+                <p className = "contact-email-label">Last Name</p>
+                <p className = "contact-email-label" 
+                style = {{color: 'red', marginLeft: '2px'}}>*</p>
+            </div>
             <input 
               name="lastName"
               value={lastName}
@@ -179,11 +193,34 @@ function SignUp() {
               className="inline-nameblocks" 
               placeholder='Last Name'/>
           </div>
-            
         </div>
         <div className="Row">
           <div className="div-row-two">
-            <p>LinkedIn (Optional)</p>
+          <div className = "row-container">
+                <p className = "contact-email-label">Phone Number</p>
+                <p className = "contact-email-label" 
+                style = {{color: 'red', marginLeft: '2px'}}>*</p>
+            </div>
+            <input 
+              name="phoneNumber"
+              value={phoneNumber}
+              onChange={e => setPhoneNumber(e.target.value)}
+              className = "inline-nameblocks" 
+              placeholder='Phone Number'/>
+          </div>
+          <div className="div-row-two">
+            <p className = "contact-email-label">Github</p>
+            <input 
+              name="github"
+              value={github}
+              onChange={e => setGithub(e.target.value)}
+              className = "inline-nameblocks" 
+              placeholder='Github'/>
+          </div>
+        </div>
+        <div className="Row">
+          <div className="div-row-two">
+            <p className = "contact-email-label">LinkedIn</p>
             <input 
               name="linkedin"
               value={linkedin}
@@ -192,7 +229,7 @@ function SignUp() {
               placeholder='LinkedIn'/>
           </div>
           <div className="div-row-two">
-            <p>Personal URL (Optional)</p>
+            <p className = "contact-email-label">Personal URL</p>
             <input 
               name="personalUrl"
               value={personalUrl}
@@ -202,8 +239,12 @@ function SignUp() {
           </div>
         </div>
         <div className="Row">
-        <div className="div-row-two">
-            <p>Location</p>
+          <div className="div-row-two">
+            <div className = "row-container">
+                <p className = "contact-email-label">Location</p>
+                <p className = "contact-email-label" 
+                style = {{color: 'red', marginLeft: '2px'}}>*</p>
+            </div>
             <input 
               name="location"
               value={location}
@@ -212,7 +253,11 @@ function SignUp() {
               placeholder='Location'/>
           </div>
           <div className="div-row-two">
-            <p>Country</p>
+            <div className = "row-container">
+                <p className = "contact-email-label">Country</p>
+                <p className = "contact-email-label" 
+                style = {{color: 'red', marginLeft: '2px'}}>*</p>
+            </div>
             <select 
               className="location-input-country"
               value={country}
@@ -228,7 +273,11 @@ function SignUp() {
         </div>
         <div className="Row">
           <div className="div-row-one">
-            <p>Email</p>
+            <div className = "row-container">
+                <p className = "contact-email-label">Email</p>
+                <p className = "contact-email-label" 
+                style = {{color: 'red', marginLeft: '2px'}}>*</p>
+            </div>            
             <input 
               name="email"
               value={email}
@@ -238,8 +287,12 @@ function SignUp() {
           </div>
         </div>
         <div className="Row">
-          <div className="div-row-one">
-            <p>Password</p>
+          <div className="div-row-two">
+            <div className = "row-container">
+                <p className = "contact-email-label">Password</p>
+                <p className = "contact-email-label" 
+                style = {{color: 'red', marginLeft: '2px'}}>*</p>
+            </div>
             <input 
               name="password"
               value={password}
@@ -251,10 +304,12 @@ function SignUp() {
                 matchingPasswords ? setMatchingPasswords(true) : console.log("")
               }}/>
           </div>
-        </div>
-        <div className="Row">
-          <div className="div-row-one">
-            <p>Re-Enter Password</p>
+          <div className="div-row-two">
+            <div className = "row-container">
+                <p className = "contact-email-label">Re-Enter Password</p>
+                <p className = "contact-email-label" 
+                style = {{color: 'red', marginLeft: '2px'}}>*</p>
+            </div>
             <input 
               name="reenterPassword"
               value={reenterPassword}
@@ -290,10 +345,10 @@ function SignUp() {
 
         </div> : null}
    
-        <div className="Row-upload">
+      </div>
+      <div className="Row-upload">
           <button className="interests-next-box" onClick={() => nextPage()}> Next </button>
         </div>
-      </div>
     </div>
     )
     
@@ -301,7 +356,7 @@ function SignUp() {
 
 
   return (
-    validKey ? signUpIfValid() : invaidSignUp()
+    validKey ? signUpIfValid() : signUpIfValid()
   )
 }
 
