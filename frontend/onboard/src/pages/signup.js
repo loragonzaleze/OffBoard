@@ -5,7 +5,6 @@ import AWS from 'aws-sdk';
 import "../global.css"
 import './stylesheets/login.css'
 import "./stylesheets/signupTalent.css"
-// import "./stylesheets/contact.css"
 import { useNavigate, useSearchParams } from "react-router-dom";
 import validator from "validator"
 import axios from 'axios';
@@ -17,8 +16,6 @@ function SignUp() {
  
   const [firstName, setFirstName] = React.useState("");
   const [lastName, setLastName] = React.useState("");
-  const [phoneNumber, setPhoneNumber] = React.useState("");
-  const [github, setGithub] = React.useState("");
   const [linkedin, setLinkedin] = React.useState("");
   const [personalUrl, setPersonalUrl] = React.useState("");
   const [location, setLocation] = React.useState("");
@@ -41,7 +38,6 @@ function SignUp() {
   const checkNotEmptyInputs = () => {
     return firstName !== "" 
         && lastName !== "" 
-        && phoneNumber !== ""
         && location !== ""
         && email !== "" 
         && password !== "" 
@@ -72,8 +68,6 @@ function SignUp() {
       firstName: firstName,
       lastName: lastName,
       linkedin: linkedin,
-      phoneNumber: phoneNumber,
-      github: github,
       url: personalUrl,
       location: location,
       email: email,
@@ -139,136 +133,88 @@ function SignUp() {
    
   }
 
-  const newSignUpValid = () => {
+  const signUpIfValid = () => {
     return (
-      <div className = "centered-container">
-      <div className = "signup-logo">HRnext</div>
+      <div className = "centered-container" /*style = {{justifyContent:"space-around"}}*/>
+      <div className = "welcome-message ">            
+        HRnext
+      </div>
       {firstSignup ? 
-      <>
-        <div className = "contact-title-text">
-          Welcome {firstName}, <span className='underline-company'>{company}</span> has endorsed you
-        </div>
-        <div className = "contact-subtitle-text">
-          Tell us more about yourself!        
-        </div>
-       </> :
-       <>
-        <div className = "contact-title-text">
-          Welcome back {firstName}, <span className='underline-company'>{company}</span> has endorsed you        </div>
-        <div className = "contact-subtitle-text">
-        Finish telling us more about yourself!
-        </div>
-       </>}
-      <div className = "contact-info-container">
-        <div className = "row-container"> 
-          <label>
-            <div className = "row-container">
-              <p className = "contact-email-label">First Name</p>
-              <p className = "contact-email-label" 
-              style = {{color: 'red', marginLeft: '2px'}}>*</p>
-            </div>
+      <><div className="endorse-message">
+            Welcome {firstName}, <span className='underline-company'>{company}</span> has endorsed you
+          </div><div className="login-subtitle-text">
+              Tell us more about yourself!
+            </div></> : <><div className="endorse-message">
+            Welcome back {firstName}, <span className='underline-company'>{company}</span> has endorsed you
+          </div><div className="login-subtitle-text">
+              Finish telling us more about yourself!
+            </div></>  
+    }
+      {/* <div className="endorse-message">
+        Welcome {}, <span className='underline-company'>{company}</span> has endorsed you
+      </div>
+      <div className = "login-subtitle-text">
+        Tell us more about yourself!
+      </div> */}
+
+      <div className="container">
+        <div className="Row">
+          <div className="div-row-two">
+            <p>First Name</p>
             <input 
-              className = "contact-input-box" 
-              name="firstName"
-              value={firstName}
-              onChange={e => setFirstName(e.target.value)}
-              placeholder='First Name'
-              readOnly
-            />
-          </label>
-          <div className = "contact-spacer"></div>
-          <label>
-            <div className = "row-container">
-              <p className = "contact-email-label">Last Name</p>
-              <p className = "contact-email-label" 
-              style = {{color: 'red', marginLeft: '2px'}}>*</p>
-            </div>
+                name="firstName"
+                value={firstName}
+                onChange={e => setFirstName(e.target.value)}
+                className="inline-nameblocks" 
+                placeholder='First Name'
+                readonly
+                />
+          </div>
+          <div className="div-row-two">
+            <p>Last Name</p>
             <input 
-            className = "contact-input-box" 
-            name="lastName"
-            value={lastName}
-            onChange={e => setLastName(e.target.value)}
-            placeholder='Last Name'/>
-          </label>
+              name="lastName"
+              value={lastName}
+              onChange={e => setLastName(e.target.value)}
+              className="inline-nameblocks" 
+              placeholder='Last Name'/>
+          </div>
+            
         </div>
-        <div className = "row-container">
-        <label>
-          <div className = "row-container">
-            <p className = "contact-email-label">Phone Number</p>
-            <p className = "contact-email-label" 
-            style = {{color: 'red', marginLeft: '2px'}}>*</p>
-          </div>
-          <input 
-              className="contact-input-box"
-              value={phoneNumber}
-              onChange={e => setPhoneNumber(e.target.value)}
-              placeholder='Phone Number'
-          />
-        </label>
-        <div className = "contact-spacer"></div>
-        <label>
-          <div className = "row-container">
-            <p className = "contact-email-label">Github</p>
-          </div>
-          <input 
-              className="contact-input-box"
-              name="github"
-              value={github}
-              onChange={e => setGithub(e.target.value)}
-              placeholder='Github'/>
-        </label>
-        </div>
-        
-        <div className = "row-container">
-        <label>
-          <div className = "row-container">
-            <p className = "contact-email-label">LinkedIn</p>
-          </div>
-          <input 
-              className="contact-input-box"
+        <div className="Row">
+          <div className="div-row-two">
+            <p>LinkedIn (Optional)</p>
+            <input 
               name="linkedin"
               value={linkedin}
               onChange={e => setLinkedin(e.target.value)}
-              placeholder='LinkedIn'
-          />
-        </label>
-        <div className = "contact-spacer"></div>
-        <label>
-          <div className = "row-container">
-            <p className = "contact-email-label">Personal URL</p>
+              className = "inline-nameblocks" 
+              placeholder='LinkedIn'/>
           </div>
-          <input 
-              className="contact-input-box"
+          <div className="div-row-two">
+            <p>Personal URL (Optional)</p>
+            <input 
               name="personalUrl"
               value={personalUrl}
               onChange={e => setPersonalUrl(e.target.value)}
+              className = "inline-nameblocks" 
               placeholder='Personal URL'/>
-        </label>
-        </div>
-        <div className = "row-container">
-        <label>
-          <div className = "row-container">
-            <p className = "contact-email-label">Location</p>
-            <p className = "contact-email-label" 
-                style = {{color: 'red', marginLeft: '2px'}}>*</p>
           </div>
-          <input 
-              className="contact-input-box"
+        </div>
+        <div className="Row">
+        <div className="div-row-two">
+            <p>Location</p>
+            <input 
               name="location"
               value={location}
               onChange={e => setLocation(e.target.value)}
-              placeholder='Location'
-          />
-        </label>
-        <div className = "contact-spacer"></div>
-        <label>
-            <div className = "row-container">
-              <p className = "contact-email-label">Country</p>
-              <p className = "contact-email-label" 
-              style = {{color: 'red', marginLeft: '2px'}}>*</p>
-            </div>
+              className = "location-input" 
+              placeholder='Location'/>
+          </div>
+          <div className="div-row-two">
+            <p>Country</p>
             <select 
-              className="contact-input-box"
+              className="location-input-country"
               value={country}
               name="country"
               onChange={e => setCountry(e.target.value)}
@@ -276,47 +222,50 @@ function SignUp() {
                 <option value='United States' >United States</option>
                 <option value='Canada'>Canada</option>
           </select>
-        </label>
         </div>
-        <label>
-          <div className = "row-container" >
-            <p className = "contact-email-label">Email</p>
-            <p className = "contact-email-label" 
-            style = {{color: 'red', marginLeft: '2px'}}>*</p>
+         
+        
+        </div>
+        <div className="Row">
+          <div className="div-row-one">
+            <p>Email</p>
+            <input 
+              name="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              className = {validEmail ? "email-input-box": "wrong-password-input-box"}
+              placeholder='Email'/>
           </div>
-          <input className = "contact-email-box" />
-        </label>
-        <label>
-          <div className = "row-container" >
-            <p className = "contact-email-label">Password</p>
-            <p className = "contact-email-label" 
-            style = {{color: 'red', marginLeft: '2px'}}>*</p>
+        </div>
+        <div className="Row">
+          <div className="div-row-one">
+            <p>Password</p>
+            <input 
+              name="password"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              className = {matchingPasswords ? "password-input-box" : "wrong-password-input-box"} 
+              placeholder='Password'
+              type="password"
+              onFocus={() => {
+                matchingPasswords ? setMatchingPasswords(true) : console.log("")
+              }}/>
           </div>
-          <input 
-            className = "contact-email-box" 
-            name="password"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            placeholder='Password'
-            type="password"
-            onFocus={() => {
-              matchingPasswords ? setMatchingPasswords(true) : console.log("")
-            }}/>
-        </label>
-        <label>
-          <div className = "row-container" >
-            <p className = "contact-email-label">Re-Enter Password</p>
-            <p className = "contact-email-label" 
-            style = {{color: 'red', marginLeft: '2px'}}>*</p>
-          </div>
-          <input 
-            className = "contact-email-box" 
-            name="reenterPassword"
+        </div>
+        <div className="Row">
+          <div className="div-row-one">
+            <p>Re-Enter Password</p>
+            <input 
+              name="reenterPassword"
               value={reenterPassword}
               onChange={e => setReenterPassword(e.target.value)}
+              className = {matchingPasswords ? "password-input-box" : "wrong-password-input-box"} 
               placeholder='Re-Enter Password'
-              type="password"/>
-        </label>
+              type="password"
+
+              />
+          </div>
+        </div>
         {matchingPasswords ? null : 
         <div className='Row-upload'>
           <p className="wrong-password-text"
@@ -340,17 +289,19 @@ function SignUp() {
           </p>
 
         </div> : null}
-        <button className = "contact-submit-box" onClick={() => nextPage()}>
-            Next
-        </button>
-        <div className = "signup-privacy"> Privacy Policy </div>
+   
+        <div className="Row-upload">
+          <button className="interests-next-box" onClick={() => nextPage()}> Next </button>
+        </div>
       </div>
-
     </div>
     )
+    
   }
+
+
   return (
-    validKey ? newSignUpValid() : invaidSignUp()
+    validKey ? signUpIfValid() : invaidSignUp()
   )
 }
 
