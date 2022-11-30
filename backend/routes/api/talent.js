@@ -71,8 +71,8 @@ var queryType = new graphql.GraphQLObjectType({
                 const query = 'SELECT * FROM talent WHERE job_category = \'' + job_category + "\';";
                 return db.many(query)
                 .then(data => {
-                    console.log("This is the list data")
-                    console.log(data)
+                    // console.log("This is the list data")
+                    // console.log(data)
                     return data;
                 })
                 .catch(err => {
@@ -80,7 +80,7 @@ var queryType = new graphql.GraphQLObjectType({
                 })
             }
         },
-        
+
         /** Write conditionals for filtering data for users lists */
 
         users: {
@@ -89,8 +89,8 @@ var queryType = new graphql.GraphQLObjectType({
                 const query = 'SELECT * FROM talent;'
                 return db.many(query)
                 .then(data => {
-                    console.log("This is the list data")
-                    console.log(data)
+                    // console.log("This is the list data")
+                    // console.log(data)
                     return data 
                 })
                 .catch(err => {
