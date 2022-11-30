@@ -46,6 +46,7 @@ function SignUp() {
     }
     setAllFieldsFilledOut(true);
     setValidEmail(true)
+    // Validate email
     if (!validator.isEmail(email)){
       setValidEmail(false)
       return;
