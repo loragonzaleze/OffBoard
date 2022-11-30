@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { db } = require('./../../dbconnection')
+let encrypt = require('bcryptjs')
 
 
 /**
@@ -20,14 +21,24 @@ router.post('/', (req, res) => {
     var email = req.body.email;
     var resume = req.body.resume;
     var url = req.body.url;
-    var job_title = req.body.job_title;
+    var job_title = req.body.jobTitle;
     var job_category = req.body.job_category;
     var linkedin = req.body.linkedin;
     var location = req.body.location;
     var country = req.body.country;
+    var github = req.body.github;
+    var phoneNumber = req.body.phoneNumber;
+    var salary = req.body.salary;
+    var workModel = req.body.work_model;
+    var password = req.body.password;
 
     var findDuplicateQuery = 'SELECT * FROM talent WHERE email = \'' + email + '\';';
 
+
+    let hashPassword = async function(){
+        var passwordHash = await encrypt.hash(password, 10)
+        return passwordHash;
+    }
     db.oneOrNone(findDuplicateQuery)
     .then(data => {
         if(data != null) {
@@ -50,7 +61,7 @@ router.post('/', (req, res) => {
                 )
             });
         } else {
-            var insertQuery = 'INSERT INTO talent (full_name, email, resume, url, job_title, job_category, linkedin, location, country) ' + 
+            var insertQuery = 'INSERT INTO talent (full_name, email, resume, url, job_title, job_category, linkedin, location, country, github, phone_number, work_models, salary_range) ' + 
             'VALUES (\'' 
             + full_name + '\', \'' 
             + email + '\', \'' 
@@ -60,18 +71,38 @@ router.post('/', (req, res) => {
             + job_category + '\', \''
             + linkedin + '\', \'' 
             + location + '\', \'' 
-            + country + '\');';
+            + country + '\', \'' 
+            + github + '\', \''
+            + phoneNumber + '\', \''
+            + workModel + '\', \''
+            + salary + '\');';
 
             db.none(insertQuery)
             .then(() => {
                 console.log("Successfully added " + email + " to the database!");
-                res.status(200).send(
-                    {
-                        success: true,
-                        message: "Successfully added " + email + " to the database!",
-                        type: "successfully added user to database"
-                    }
-                );
+                hashPassword().then((hashedPassword) => {
+                    var insertNewUserQuery = 'INSERT INTO login (email, password) VALUES (\'' + email + '\', \'' + hashedPassword + '\');';
+                    db.none(insertNewUserQuery).then(() => {
+                        res.status(200).send(
+                            {
+                                success: true,
+                                message: "Successfully added " + email + " to the database!",
+                                type: "successfully added user to database"
+                            }
+                        );
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        res.status(400).send(
+                            {
+                                success: false,
+                                message: "Error adding " + email + " and password to the database!",
+                                type: "error"
+                            }
+                        );
+                    })
+                })
+               
             })
             .catch(err => {
                 console.log(err)

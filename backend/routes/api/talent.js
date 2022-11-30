@@ -40,6 +40,10 @@ var talentType = new graphql.GraphQLObjectType({
         linkedin: {type: GraphQLString},
         location: {type: GraphQLString},
         country: {type: GraphQLString},
+        github: {type: GraphQLString},
+        phone_number: {type: GraphQLString},
+        work_models: {type: GraphQLString},
+        salary_range: {type: GraphQLString},
     }
 });
 var queryType = new graphql.GraphQLObjectType({
