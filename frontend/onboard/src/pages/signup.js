@@ -9,6 +9,7 @@ import "./stylesheets/signupTalent.css"
 import { useNavigate, useSearchParams } from "react-router-dom";
 import validator from "validator"
 import axios from 'axios';
+import {BiErrorAlt, BiFontSize} from 'react-icons/bi'
 
 
 function SignUp() {
@@ -94,6 +95,8 @@ function SignUp() {
 
   }
 
+
+
   /** gets key from link, if valid continue with sign up and prepopulate some fields */
   useEffect(() => {
     console.log("KEY PARAM")
@@ -126,19 +129,32 @@ function SignUp() {
 
   }, [""])
 
+  const goToHome = () =>{
+    let path = `..`;
+    navigate(path);
+}
+
   const invaidSignUp = () => {
     return (
-      <div className = "centered-container" /*style = {{justifyContent:"space-around"}}*/>
-      <div className = "welcome-message ">            
+      <div className = "centered-container-welcome" /*style = {{justifyContent:"space-around"}}*/>
+      <div className = "welcome-message " onClick={goToHome}>            
         HRnext
       </div>
       <div className="endorse-message">
-           Uh oh, looks like you're trying to sign up with an invalid key. Please contact the person who gave you this key for more information.
+           Uh oh, looks like you're trying to sign up with an invalid key. 
+      <div className='endorse-message'>
+        Please contact the person who gave you this key for more information.
+      </div>
+      <div className='endorese-message'>
+        <BiErrorAlt style={{color: "#0078f5", fontSize: 350}} />
+      </div>
       </div>
     </div>
     )
    
   }
+
+
 
   const newSignUpValid = () => {
     return (
@@ -276,6 +292,7 @@ function SignUp() {
             >
                 <option value='United States' >United States</option>
                 <option value='Canada'>Canada</option>
+                
           </select>
         </label>
         </div>
