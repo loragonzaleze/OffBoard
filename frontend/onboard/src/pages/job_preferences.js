@@ -27,7 +27,6 @@ function JobPreferences() {
   
   const nextPage = () => {
 
-    navigate('/resume', {state: location.state})
     let workModel = "";
     if(onsite) {
         workModel += "Onsite, ";
@@ -42,9 +41,11 @@ function JobPreferences() {
         workModel = workModel.concat(0, workModel.length - 2);
     }
     console.log(workModel);
-    // TODO EDWIN LOOK AT THIS!
     location.state.work_model = workModel;
     location.state.salary = salary;
+
+    navigate('/resume', {state: location.state})
+
   }
 
   return (

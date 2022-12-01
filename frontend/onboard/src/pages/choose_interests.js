@@ -61,7 +61,7 @@ function ChooseInterests() {
     location.state.job_category = jobCategories[prevJobCategory]
     console.log(location.state)
 
-    navigate('/job-preferences', {state: location.state})
+    navigate('/job-title', {state: location.state})
 
   }
 

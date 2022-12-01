@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import AWS from 'aws-sdk';
 import "../global.css"
 import "./stylesheets/resume.css"
@@ -7,9 +7,10 @@ import axios from 'axios';
 
 
 function ResumeUpload() {
-
     const [file, setFile] = React.useState(null);
+    const [uploadedFile, setUploadedFile] = React.useState(false);
     let location = useLocation();
+    let navigate = useNavigate();
     AWS.config.region = 'us-east-1'; // Region
     AWS.config.credentials = new AWS.CognitoIdentityCredentials({
         IdentityPoolId: process.env.REACT_APP_AWS_IDENTITY_POOL_ID
@@ -20,10 +21,16 @@ function ResumeUpload() {
         region: 'us-east-1'
     })
 
-
     const handleResumeInput = (e) => {
         setFile(e.target.files[0]);
+        setUploadedFile(true);
+        console.log(e.target.files[0])
     }
+
+    useEffect(() => {
+        console.log(location.state)
+    }
+    , [""])
 
     const uploadResume = () => {
         const filename = location.state.firstName + "_" + location.state.lastName + "_Resume.pdf";
@@ -48,6 +55,7 @@ function ResumeUpload() {
             } else {
                 console.log(res)
                 console.log("Successfully uplaoded ")
+                navigate('/confirm-info', {state: location.state})
 
             }
         })
@@ -64,7 +72,7 @@ function ResumeUpload() {
              <div className="Row-upload-resume">
                 <label className="file-upload">
                     <input type="file" multiple onChange={e => handleResumeInput(e)} />
-                    <i className="fa fa-cloud-upload" style={{fontSize: 22}}/><span className="file-upload-label">Attach Resume</span> 
+                    <i className="fa fa-cloud-upload" style={{fontSize: 22}}/><span className="file-upload-label">{uploadedFile ? file.name : "Attach Resume"}</span> 
                 </label>
             </div>
             <button className = "interests-next-box" onClick={() => uploadResume()} >

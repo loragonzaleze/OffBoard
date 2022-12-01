@@ -35,7 +35,17 @@
     height: 70vh;
     margin-left: 5vw;
     margin-right: 5vw;
-    background-color: antiquewhite;
+    background-color: lightblue;
+}
+
+.profile-left-container-bottom-box {
+	display:flex;
+	flex-direction: row;
+	position:fixed;
+	margin-top: 60vh;
+	width: 30vw;
+	height: 10vh;
+	background-color: aquamarine;
 }
 
 .profile-right-container {
@@ -44,7 +54,7 @@
     width: 60vw;
     height: 70vh;
     margin-right: 5vw;
-    background-color: antiquewhite;
+    background-color: lightblue;
 }
 
 .profile-row-container-large {
@@ -58,6 +68,15 @@
 	flex-direction: row;
 }
 
+.profile-row-container-specialty {
+	width:30vw;
+	height:10vh;
+	display:flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
 .profile-image {
 	width: 15vw;
 	height: 15vw;
@@ -68,16 +87,26 @@
     margin-top: 2vw;
 }
 
-.profile-title-text {
+.profile-name-text {
     font: 'Poppins';
     font-weight: 600;
     font-size: large;
     color:black;
     text-align: center;
+	margin-top: 2vh;
 }
 
-.profile-normal-text {
+.profile-bio-text {
     font: 'Poppins';
     color: black;
     text-align: center;
+}
+
+.profile-bio-box {
+	display: flex;
+	flex-direction: column;
+    margin-left: 5vw;
+    margin-right: 5vw;
+	overflow-wrap: break-word;
+	height: 18vh;
 }
