@@ -31,12 +31,11 @@ function Profile() {
         <div className = "profile-row-container-large">
             <div className = "profile-left-container">
                 <img className="profile-image" src={ali} alt='IMPORT IMAGE HERE' />
-                <text className="profile-name-text"> IMPORT NAME HERE </text>
+                <text className="profile-name-text"> Captain America</text>
                 <div className="profile-bio-box">
                     <text className="profile-bio-text">
-                        IMPORT BIOGRAPHY HERE
-                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                        aaa
+                        Currently laid off from Jane Street,
+                        previously a quantitative researcher. Hoping to find a new company.
                     </text>
                 </div>
                 <div className="profile-left-container-bottom-box">
@@ -49,8 +48,7 @@ function Profile() {
             </div>
             <div className = "profile-right-container">
                 <div className="profile-row-container" style={{justifyContent:"center"}}>
-                    <text style={{textAlign:"center"}}> Previous Work Experience</text>
-                    <button style={{alignContent:"right"}}> Add </button>
+                    <text className="profile-previous-exp-text"> Previous Work Experience</text>
                 </div>
             </div>
         </div>

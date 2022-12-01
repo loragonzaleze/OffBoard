@@ -36,6 +36,7 @@
     margin-left: 5vw;
     margin-right: 5vw;
     background-color: lightblue;
+	border-radius: 10px;
 }
 
 .profile-left-container-bottom-box {
@@ -45,7 +46,8 @@
 	margin-top: 60vh;
 	width: 30vw;
 	height: 10vh;
-	background-color: aquamarine;
+	background-color: #4685e3;
+	border-radius: 10px;
 }
 
 .profile-right-container {
@@ -55,6 +57,8 @@
     height: 70vh;
     margin-right: 5vw;
     background-color: lightblue;
+	border-radius: 10px;
+	padding-top: 2vh;
 }
 
 .profile-row-container-large {
@@ -109,4 +113,11 @@
     margin-right: 5vw;
 	overflow-wrap: break-word;
 	height: 18vh;
+}
+
+.profile-previous-exp-text {
+	margin-top: 0vh;
+	text-align: center;
+	font-weight: 700;
+	font-family: "Poppins";
 }
