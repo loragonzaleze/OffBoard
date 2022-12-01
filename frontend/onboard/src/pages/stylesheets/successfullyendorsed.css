@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Antic+Didone&family=Bungee+Inline&family=Fredericka+the+Great&family=Monofett&family=Open+Sans:wght@300;400;800&family=Questrial&family=Raleway&family=Roboto&family=Zilla+Slab+Highlight&display=swap');
+
+.se-centered-container{
+	display: flex;
+	justify-content: top;
+	align-items: center;
+	height: 100vh;
+	flex-direction: column;
+	user-select: none;
+}
+
+.se-logo {
+	margin-top: 10vh;
+	margin-bottom: 10vh;
+	font-family: 'Poppins';
+	font-weight: 700;
+	font-size: 50px;
+	color: #4685e3;
+}
+
+.se-logo:hover {
+	cursor: pointer;
+	color: #0076f576;
+}
+
+.se-message {
+	margin-top: 0vh;
+	font-size: 45px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.se-bottom-next {
+	background-color: #4685e3;
+	width: 20vw;
+	height: 8vh;
+	border-radius: 10px;
+	display:flex;
+	margin-left:75vw;
+	justify-content: center;
+	align-items: center;
+}
+
+.se-bottom-next:hover {
+	cursor: pointer;
+	background-color: #0076f576;
+}
+
+.se-bottom-text {
+	color: white;
+	font-size: 20px;
+	text-align: center;
+	font: "Poppins";
+}

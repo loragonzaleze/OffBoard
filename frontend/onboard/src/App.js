@@ -18,6 +18,8 @@ import JobTitle from './pages/job_title.js';
 import Yoe from './pages/yoe.js';
 import ConfirmInfo from './pages/confirmInfo.js';
 import Endorse from './pages/endorse.js';
+import SuccessfullyEndorsed from './pages/successfullyendorsed.js'
+import WorkExperience from './pages/workexperience.js'
 
 class App extends Component {
 	render() {
@@ -44,6 +46,8 @@ class App extends Component {
 						<Route path = "/yoe" element={<Yoe/>} />
 						<Route path = "/confirm-info" element={<ConfirmInfo/>} />
 						<Route path = "/endorse" element={<Endorse/>} />
+						<Route path = "/successfullyendorsed" element={<SuccessfullyEndorsed/>} />
+						<Route path ="/workexperience" element={<WorkExperience/>} />
 					</Routes>
 				</Router>
 			</div>
