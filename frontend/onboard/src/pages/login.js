@@ -5,6 +5,7 @@ import './stylesheets/login.css'
 import React, { useState } from 'react';
 import validator from 'validator';
 import {BsFillCircleFill} from "react-icons/bs"
+import axios from "axios"
 
 // Page to login into an existing account
 function Login() {
@@ -17,6 +18,9 @@ function Login() {
   const [validEmail, setValidEmail] = useState(true)
   const [password, setPassword] = useState("");
   const [validPass, setValidPass] = useState(true)
+  const [validLogin, setValidLogin] = useState(true)
+  const [userDoesNotExit , setUserDoesNotExist] = useState(false)
+  const [incorrectPassword, setIncorrectPassword] = useState(false)
 
   const goToHome = () => {
     let path = `/`;
@@ -27,6 +31,38 @@ function Login() {
     let path = `../sign-up`;
     navigate(path);
   }
+
+  const loginUser = () => {
+    axios.post('http://localhost:5001/api/login', {"email" : email, "password" : password}).then((res, err) => {
+        if(res.data.success) {
+          navigate('/profile', {state: res.data})
+        } else{
+          if(res.data.type === "incorrect_password") {
+            setValidPass(false)
+            setPassword("")
+          } else if(res.data.type === "user_not_found") {
+            setValidEmail(false)
+            setEmail("")
+            setPassword("")
+          }
+        }
+      
+    })
+    .catch(err => {
+      console.log(err.response.data)
+      if(err.response.data.type === "incorrect_password") {
+        setValidPass(false)
+        setValidEmail(true)
+        setPassword("")
+
+      } else if(err.response.data.type === "user_not_found") {
+        setValidEmail(false)
+        setEmail("")
+        setPassword("")
+      }
+    })
+  }
+
 
   const goToProfile = () => {
     setValidEmail(true)
@@ -49,6 +85,17 @@ function Login() {
     navigate(path);
   }
 
+  const clearEmailAndPassword = () => {
+    if(validEmail === false) {
+      setEmail("")
+      setPassword("")
+      setValidEmail(true)
+    } else if(validPass === false) {
+      setPassword("")
+      setValidPass(true)
+    } 
+  }
+
     return (
       <div className = "centered-container" style = {{justifyContent:"space-around"}}>
         <BottomGoTos/>
@@ -67,7 +114,7 @@ function Login() {
             <p className = "login-email-label" 
             style = {{color: 'red', marginLeft: '2px'}}>*</p>
           </div>
-          <input className = {validEmail ? "login-input-box": "wrong-email-input-box"} onChange = {e => setEmail(e.target.value)}/>
+          <input className = {validEmail ? "login-input-box": "wrong-email-input-box"} onChange = {e => setEmail(e.target.value)} value={email} onClick={clearEmailAndPassword}/>
           {validEmail ? null:
             <div className='row-upload'>
               <p style={{color: "#ff0000"}}>
@@ -82,7 +129,7 @@ function Login() {
             <p className = "login-email-label"
             style = {{color:'red', marginleft: '2px', paddingTop: 10}}>*</p>
           </div>
-          <input className = {validPass ? "login-input-box": "wrong-email-input-box"} onChange = {e =>setPassword(e.target.value)} type="password"/>
+          <input className = {validPass ? "login-input-box": "wrong-email-input-box"} onChange = {e =>setPassword(e.target.value)} type="password" value={password} onClick={clearEmailAndPassword}/>
           {validPass ? null:
             <div className='row-upload'>
               <p style={{color: "#ff0000"}}>
@@ -91,7 +138,7 @@ function Login() {
             </div>
           }
         </label>
-        <button className = "login-next-box" onClick = {goToProfile}>
+        <button className = "login-next-box" onClick = {loginUser}>
             Next
         </button>
         <div className = "login-or">
