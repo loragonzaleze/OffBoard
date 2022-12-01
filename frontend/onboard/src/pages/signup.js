@@ -143,7 +143,7 @@ function SignUp() {
       <div className='endorse-message'>
         Please contact the person who gave you this key for more information.
       </div>
-      <div className='endorese-message'>
+      <div className='endorse-message'>
         <BiErrorAlt style={{color: "#0078f5", fontSize: 350}} />
       </div>
       </div>
