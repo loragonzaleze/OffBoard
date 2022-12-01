@@ -18,6 +18,10 @@ function GettingStarted() {
         let path = `talent-page`;
         navigate(path);
     }
+
+    const goToEndorse = () => {
+        navigate('/endorse')
+    }
     return (
       <div className = "centered-container">
           <div className = "logo">
@@ -50,7 +54,7 @@ function GettingStarted() {
                     Looking to Hire
                     <BsArrowRightCircle style = {{marginLeft: 5}}/>
                 </button>
-                <button className = "button-container">
+                <button className = "button-container" onClick = {goToEndorse}>
                     Endorse Someone
                     <BsArrowRightCircle style = {{marginLeft: 5}}/>
                 </button>

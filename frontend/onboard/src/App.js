@@ -17,7 +17,7 @@ import JobPreferences from './pages/job_preferences.js'
 import JobTitle from './pages/job_title.js';
 import Yoe from './pages/yoe.js';
 import ConfirmInfo from './pages/confirmInfo.js';
-
+import Endorse from './pages/endorse.js';
 
 class App extends Component {
 	render() {
@@ -43,6 +43,7 @@ class App extends Component {
 						<Route path = "/job-title" element={<JobTitle/>} />
 						<Route path = "/yoe" element={<Yoe/>} />
 						<Route path = "/confirm-info" element={<ConfirmInfo/>} />
+						<Route path = "/endorse" element={<Endorse/>} />
 					</Routes>
 				</Router>
 			</div>

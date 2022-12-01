@@ -1,11 +1,9 @@
 // Page for when someone clicks "sign up" at top of home page. Not the same as 
 // new acc page where someone has gotten endorsed
 import React, { useEffect } from 'react';
-import AWS from 'aws-sdk';
 import "../global.css"
 import './stylesheets/login.css'
 import "./stylesheets/signupTalent.css"
-// import "./stylesheets/contact.css"
 import { useNavigate, useSearchParams } from "react-router-dom";
 import validator from "validator"
 import axios from 'axios';
@@ -285,7 +283,13 @@ function SignUp() {
             <p className = "contact-email-label" 
             style = {{color: 'red', marginLeft: '2px'}}>*</p>
           </div>
-          <input className = "contact-email-box" />
+          <input 
+            className = "contact-email-box" 
+            name="email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+              
+          />
         </label>
         <label>
           <div className = "row-container" >
