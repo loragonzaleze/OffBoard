@@ -2,7 +2,7 @@
 
 .team-logo {
 	position: absolute;
-	font-family: 'Open Sans';
+	font-family: 'Poppins';
 	top: 0px;
 	left: 0px;
 	margin-top: 10px;
@@ -38,13 +38,13 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 80vh;
+	height: 65vh;
 	flex-direction: column;
 	user-select: none;
 }
 
 .team-title-text {
-	font-family: 'Open Sans';
+	font-family: 'Poppins';
 	font-weight: 600;
 	font-size: 40px;
 	color: #4685e3;
@@ -61,4 +61,25 @@
 	object-fit: cover;
 	border-radius: 50%;
 	margin-right: 5px;
+}
+
+.team-normal-text {
+	font-size: 20px;
+	font-family: "Poppins";
+}
+
+.team-row-names {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	width: 1025px;
+}
+
+.team-text-names {
+  margin-left: 50px;
+  margin-right: 50px;
+  font-family: "Poppins";
+  font-weight: 700;
+  width: 200px;
 }
