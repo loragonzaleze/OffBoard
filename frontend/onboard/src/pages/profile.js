@@ -48,7 +48,10 @@ function Profile() {
                 </div>
             </div>
             <div className = "profile-right-container">
-                <text> testing right container</text>
+                <div className="profile-row-container" style={{justifyContent:"center"}}>
+                    <text style={{textAlign:"center"}}> Previous Work Experience</text>
+                    <button style={{alignContent:"right"}}> Add </button>
+                </div>
             </div>
         </div>
     </div>
