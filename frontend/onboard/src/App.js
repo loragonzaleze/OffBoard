@@ -15,6 +15,7 @@ import JobseekerForm from './pages/jobseeker_form.js';
 import Profile from './pages/profile.js';
 import JobPreferences from './pages/job_preferences.js'
 import JobTitle from './pages/job_title.js';
+import Yoe from './pages/yoe.js';
 
 class App extends Component {
 	render() {
@@ -38,6 +39,7 @@ class App extends Component {
 						<Route path="/profile" element={<Profile />} />
 						<Route path = "/job-preferences" element={<JobPreferences/>} />
 						<Route path = "/job-title" element={<JobTitle/>} />
+						<Route path = "/yoe" element={<Yoe/>} />
 					</Routes>
 				</Router>
 			</div>
