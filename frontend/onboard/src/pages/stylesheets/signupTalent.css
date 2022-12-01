@@ -109,18 +109,34 @@
 	margin-bottom: 20px;
 }
 
+.centered-container-welcome {
+	display: flex;
+	justify-content: top;
+	align-items: center;
+	height: 100vh;
+	flex-direction: column;
+	user-select: none;
+}
+
 .welcome-message {
-	margin-top: 15vh;
-	font-family: 'Open Sans';
+	margin-top: 10vh;
+	margin-bottom: 10vh;
+	font-family: 'Poppins';
 	font-weight: 700;
-	font-size: 35px;
+	font-size: 50px;
 	color: #4685e3;
 }
 
+.welcome-message:hover {
+	cursor: pointer;
+	color: #0076f576;
+}
+
 .endorse-message {
-	margin-top: 10vh;
+	margin-top: 0vh;
 	font-size: 45px;
 	font-weight: bold;
+	text-align: center;
 }
 
 .underline-company {
