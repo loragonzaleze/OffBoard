@@ -35,6 +35,10 @@ function Yoe() {
         return;
       }
     }
+    else
+    {
+      return;
+    }
 
     let path = `/endorsed`;  // FIX - change endorsed 
     navigate(path);
@@ -57,7 +61,7 @@ function Yoe() {
             <p className = "login-email-label" 
             style = {{color: 'red', marginLeft: '2px'}}>*</p>
           </div>
-          <input className = {validYear ? "yoe-input-box": "wrong-yoe-input-box"} type = "number" onChange = {e => setYears(e.target.value)}/>
+          <input className = {validYear ? "yoe-input-box": "wrong-yoe-input-box"}  onChange = {e => setYears(e.target.value)}/>
           {validYear ? null:
             <div className='row-upload'>
               <p className='wrong-years' style={{color:"#ff0000"}}>
