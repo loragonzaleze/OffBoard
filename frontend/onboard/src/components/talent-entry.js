@@ -21,6 +21,7 @@ function TalentEntry(props) {
 	const [yearColor, setYearColor] = useState('');
 	const [fieldColor, setFieldColor] = useState('#fff');
 	const [showModal, setShowModal] = useState(false);
+	const [talentData, setTalentData] = useState({});
 
 	// TODO Finish filling in the colors for all Job fields
 	const fieldToColor = new Map([
@@ -51,7 +52,7 @@ function TalentEntry(props) {
 			'#3d92d4',
 		];
 		setYearColor(colors[props.years - 1]);
-
+		setTalentData(props.data)
 		setFieldColor(fieldToColor.get(props.field));
 
 		if (props.alt) {
@@ -118,7 +119,7 @@ function TalentEntry(props) {
 							Mobile phone number
 						</text>
 						<text className="talent-entry-modal-body-p">
-							ADD PHONE NUMBER
+							{talentData.phone_number}
 						</text>
 					</div>
 					<div className = "talent-entry-modal-body-container">
@@ -126,7 +127,7 @@ function TalentEntry(props) {
 							Email address
 						</text>
 						<text className="talent-entry-modal-body-p">
-							ADD EMAIL ADDRESS
+							{talentData.email}
 						</text>
 					</div>
 				</Modal.Body>
@@ -142,7 +143,7 @@ function TalentEntry(props) {
 							Previous company
 						</text>
 						<text className="talent-entry-modal-body-p">
-							ADD WORK EXP
+						{props.workexp[props.email] ? props.workexp[props.email].prev_company : "N/A" }
 						</text>
 					</div>
 					<div className = "talent-entry-modal-body-container">
@@ -150,7 +151,7 @@ function TalentEntry(props) {
 							Team/Department
 						</text>
 						<text className="talent-entry-modal-body-p">
-							ADD PREV TEAM/DEP
+						{props.workexp[props.email] ? props.workexp[props.email].prev_team : "N/A" }
 						</text>
 					</div>
 					<div className = "talent-entry-modal-body-container">
@@ -158,7 +159,7 @@ function TalentEntry(props) {
 							Job Title
 						</text>
 						<text className="talent-entry-modal-body-p">
-							ADD JOB TITLE
+						{props.workexp[props.email] ? props.workexp[props.email].prev_job_title : "N/A" }
 						</text>
 					</div>
 					<div className = "talent-entry-modal-body-container">
@@ -166,7 +167,7 @@ function TalentEntry(props) {
 							Years of Experience
 						</text>
 						<text className="talent-entry-modal-body-p">
-							ADD YEARS OF EXPERIENCE
+							{props.workexp[props.email] ? props.workexp[props.email].prev_yoe : "N/A" }
 						</text>
 					</div>
 				</Modal.Body>
@@ -182,7 +183,7 @@ function TalentEntry(props) {
 							Location
 						</text>
 						<text className="talent-entry-modal-body-p">
-							ADD LOCATION
+							{talentData.location}
 						</text>
 					</div>
 					<div className = "talent-entry-modal-body-container">
@@ -190,7 +191,7 @@ function TalentEntry(props) {
 							Salary Expectation
 						</text>
 						<text className="talent-entry-modal-body-p">
-							ADD SALARY EXPECTATION
+							{talentData.salary_range}
 						</text>
 					</div>
 				</Modal.Body>

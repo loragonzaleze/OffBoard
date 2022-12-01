@@ -82,7 +82,8 @@ function SignUp() {
       country: country,
       matchingPasswords: matchingPasswords,
       allFieldsFilledOut: allFieldsFilledOut,
-      clickedSignUp: clickedSignUp
+      clickedSignUp: clickedSignUp,
+      company: company
     }
 
     console.log("STATE")

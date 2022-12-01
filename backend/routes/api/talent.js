@@ -44,6 +44,7 @@ var talentType = new graphql.GraphQLObjectType({
         phone_number: {type: GraphQLString},
         work_models: {type: GraphQLString},
         salary_range: {type: GraphQLString},
+        company: {type: GraphQLString},
     }
 });
 var queryType = new graphql.GraphQLObjectType({

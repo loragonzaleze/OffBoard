@@ -31,6 +31,7 @@ router.post('/', (req, res) => {
     var salary = req.body.salary;
     var workModel = req.body.work_model;
     var password = req.body.password;
+    var company = req.body.company;
 
     var findDuplicateQuery = 'SELECT * FROM talent WHERE email = \'' + email + '\';';
 
@@ -61,7 +62,7 @@ router.post('/', (req, res) => {
                 )
             });
         } else {
-            var insertQuery = 'INSERT INTO talent (full_name, email, resume, url, job_title, job_category, linkedin, location, country, github, phone_number, work_models, salary_range) ' + 
+            var insertQuery = 'INSERT INTO talent (full_name, email, resume, url, job_title, job_category, linkedin, location, country, github, phone_number, work_models, salary_range, company) ' + 
             'VALUES (\'' 
             + full_name + '\', \'' 
             + email + '\', \'' 
@@ -75,7 +76,8 @@ router.post('/', (req, res) => {
             + github + '\', \''
             + phoneNumber + '\', \''
             + workModel + '\', \''
-            + salary + '\');';
+            + salary + '\', \''
+            + company + '\');';
 
             db.none(insertQuery)
             .then(() => {
