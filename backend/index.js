@@ -18,7 +18,7 @@ const signup = require('./routes/api/signup')
 const { graphQLSchema, graphQLRoot } = require('./routes/api/talent');
 const talentEntry = require('./routes/api/talentEntry');
 const workExp = require('./routes/api/workexp');
-
+const login = require('./routes/api/login');
 
 app.use('/talent-entry', talentEntry);
 app.use('/graphql', graphqlHTTP({
@@ -29,6 +29,7 @@ app.use('/graphql', graphqlHTTP({
 app.use('/api/', test)
 app.use('/api/signup', signup)
 app.use('/api/workexp', workExp)
+app.use('/api/login', login)
 
 
 const port = process.env.port || 5001;
