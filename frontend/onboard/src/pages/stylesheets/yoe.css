@@ -13,21 +13,21 @@
 .login-logo:hover {
 	cursor: pointer;
 }
-.login-title-text {
+.yoe-title-text {
 	font-family: 'Poppins';
 	font-weight: 700;
 	font-size: 42px;
-	margin-top: 20vh;
+	margin-bottom: 6vh;
 }
 .login-subtitle-text {
-	margin-top: 2vh;
+	margin-top: 0vh;
 	font-family: 'Poppins';
 	font-weight: 300px;
 	font-size: 22px;
 	color: lightslategray;
-	margin-bottom: 0vh;
+	margin-bottom: 2vh;
 }
-.login-input-box {
+.yoe-input-box {
 	width: 550px;
 	height: 50px;
 	background-color: #f6f6f6;
@@ -37,6 +37,19 @@
 	padding-left: 20px;
 	font-size: 20px;
 }
+
+.wrong-yoe-input-box{
+    width: 550px;
+    height: 50px;
+    background-color: #ffa794;
+    outline: none;
+    border: 0px;
+    border-radius: 10px;
+    padding-left: 20px;
+    font-size: 20px;
+    border: 1px solid #ff0000;
+}
+
 .login-next-box {
 	margin-top: 3vh;
 	width: 575px;

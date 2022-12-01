@@ -3,15 +3,20 @@ import { useNavigate } from "react-router-dom";
 import "../global.css"
 import './stylesheets/login.css'
 import React, { useState } from 'react';
+import validator from 'validator';
+import {BsFillCircleFill} from "react-icons/bs"
 
 // Page to login into an existing account
 function Login() {
   let navigate = useNavigate(); 
-
+  const dummyEmail = "test@gmail.com"
+  const dummyPassword = "test123"
 
   // stores corporate email 
   const [email, setEmail] = useState("");
+  const [validEmail, setValidEmail] = useState(true)
   const [password, setPassword] = useState("");
+  const [validPass, setValidPass] = useState(true)
 
   const goToHome = () => {
     let path = `/`;
@@ -23,10 +28,24 @@ function Login() {
     navigate(path);
   }
 
-  const goToEndorsed = () => {
-    // TODO check that inputted email is valid (not blank, is valid email (@somecompany))
-    // make sure email exists within database of recruiters endorsing ppl
-    let path = `/endorsed`;
+  const goToProfile = () => {
+    setValidEmail(true)
+    setValidPass(true)
+    if (!validator.isEmail(email)){
+      setValidEmail(false)
+      return;
+    }
+    if(!(email === dummyEmail))
+    {
+      setValidEmail(false)
+      return;
+    }
+    if(!(password === dummyPassword))
+    {
+      setValidPass(false);
+      return;
+    }
+    let path = `/profile`;
     navigate(path);
   }
 
@@ -48,7 +67,14 @@ function Login() {
             <p className = "login-email-label" 
             style = {{color: 'red', marginLeft: '2px'}}>*</p>
           </div>
-          <input className = "login-input-box" onChange = {e => setEmail(e.target.value)}/>
+          <input className = {validEmail ? "login-input-box": "wrong-email-input-box"} onChange = {e => setEmail(e.target.value)}/>
+          {validEmail ? null:
+            <div className='row-upload'>
+              <p style={{color: "#ff0000"}}>
+                Invalid Email
+              </p>
+            </div>
+          }
         </label>
         <label>
           <div className = "row-container">
@@ -56,9 +82,16 @@ function Login() {
             <p className = "login-email-label"
             style = {{color:'red', marginleft: '2px', paddingTop: 10}}>*</p>
           </div>
-          <input className = "login-input-box" onChange = {e =>setPassword(e.target.value)}/>
+          <input className = {validPass ? "login-input-box": "wrong-email-input-box"} onChange = {e =>setPassword(e.target.value)} type="password"/>
+          {validPass ? null:
+            <div className='row-upload'>
+              <p style={{color: "#ff0000"}}>
+                Invalid Password
+              </p>
+            </div>
+          }
         </label>
-        <button className = "login-next-box" onClick = {goToEndorsed}>
+        <button className = "login-next-box" onClick = {goToProfile}>
             Next
         </button>
         <div className = "login-or">
