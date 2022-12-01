@@ -143,7 +143,7 @@ function SignUp() {
   const newSignUpValid = () => {
     return (
       <div className = "centered-container">
-      <div className = "contact-logo">HRnext</div>
+      <div className = "signup-logo">HRnext</div>
       {firstSignup ? 
       <>
         <div className = "contact-title-text">
@@ -344,7 +344,7 @@ function SignUp() {
         <button className = "contact-submit-box" onClick={() => nextPage()}>
             Submit
         </button>
-        <div className = "contact-privacy"> Privacy Policy </div>
+        <div className = "signup-privacy"> Privacy Policy </div>
       </div>
 
     </div>
