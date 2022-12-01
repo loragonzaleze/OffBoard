@@ -44,7 +44,8 @@ class TalentPage extends React.Component {
           "people": "People",
           "productManagement": "Product Management",
           "researchScience": "Research and Science",
-        }
+        },
+        workExp: {}
       };
     }
     /** Filter results based on buttons clicked on side */ 
@@ -87,12 +88,15 @@ class TalentPage extends React.Component {
     returnTalentList = () => {
       let talentList = [];
       let alt = false;
-      console.log(this.state.filteredTalent)
+
+      console.log('WorkExp')
+      console.log(this.state.workExp["test5@email.com"])
       // for (let j = 0; j < 6; j++) {
         for(let i = 0; i < this.state.filteredTalent.length; i++){
           let talent = this.state.filteredTalent[i];
           talentList.push( <TalentEntry 
             key = {talent.email}
+            email={talent.email}
             alt = {alt} 
             name = {talent.full_name} 
             job = {talent.job_title}
@@ -100,8 +104,10 @@ class TalentPage extends React.Component {
             field = {talent.job_category}
             resume = {talent.resume}
             location = {talent.location}
-            company = "Google" // TODO add current company to GraphQL schema
-            linkedin = {talent.linkedin}/>)
+            company = {talent.company}
+            linkedin = {talent.linkedin}
+            data = {talent}
+            workexp={this.state.workExp}/>)
             alt = !alt;
         }
      // }
@@ -112,10 +118,14 @@ class TalentPage extends React.Component {
 
 
     componentDidMount() {
-      this.retrieveTalentList()
-      .then(res => {
-        this.setState({talent: res.data.data.users})
-        this.setState({filteredTalent: res.data.data.users})
+      axios.get('http://localhost:5001/api/workexp').then(res => {
+        this.setState({workExp: res.data.data})
+        this.retrieveTalentList()
+        .then(res => {
+          this.setState({talent: res.data.data.users})
+          this.setState({filteredTalent: res.data.data.users})
+          
+        })
       })
       .catch((error) => console.log(error));
 
@@ -142,6 +152,11 @@ class TalentPage extends React.Component {
             linkedin
             location
             country
+            github
+            phone_number
+            work_models
+            salary_range
+            company
           }
         }
       `;

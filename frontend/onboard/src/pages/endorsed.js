@@ -52,7 +52,6 @@ function Endorsed() {
               onChange = {(e) => setFirstName(e.target.value)}/>
             </label>
             <div className = "endorsed-spacer"></div>
-            {/* LAST NAME */}
             <label>
               <div className = "row-container">
                 <p className = "endorsed-email-label">Last Name</p>
